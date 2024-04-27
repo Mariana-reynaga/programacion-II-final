@@ -16,15 +16,11 @@
 
 <body>
     <?php require "componente/nav.php" ?>
+    <div class="position-relative" style="min-height:100vh">
 
-    <div class="container-fluid">
-        <h1>Contacto</h1>
 
-        <div class></div>
+        <?php require "componente/footer.php"?>
     </div>
-
-    <?php require "componente/footer.php"?>
-
 </body>
 
 </html>
