@@ -3,7 +3,7 @@
 
     $categoria = isset( $_GET["sec"] ) ? $_GET["sec"] : "home";
 
-    $vistas = "404";
+    $vistas = "error";
 
     $viewsValidas= [
         "home" => [
