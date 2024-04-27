@@ -28,6 +28,7 @@ class Manga{
             $manga-> precio = $comicArray["precio"];
             $manga-> portada = $comicArray["portada"];
             $manga-> sinopsis = $comicArray["sinopsis"];
+            $manga-> genero = $comicArray["genero"];
 
             $catalogo [] = $manga; //hago el push
         }
@@ -35,6 +36,21 @@ class Manga{
         return $catalogo;
     }
 
+    //catalogo por genero
+    function catalogo_x_categoria($genero){
+        $mangas = $this->catalogo();
+
+        $generoCatalogo = [];
+
+        foreach ($mangas as $manga) {
+            if ($manga->genero == $genero) {
+                $generoCatalogo []= $manga;
+            }
+        }
+        return $generoCatalogo;
+    }
+
+    //getters 
     public function getId()
         {
                 return $this->id;

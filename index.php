@@ -1,7 +1,7 @@
 <?php
     require_once "class/Manga.php";
 
-    $categoria = isset( $_GET["cat"] ) ? $_GET["cat"] : "home";
+    $categoria = isset( $_GET["sec"] ) ? $_GET["sec"] : "home";
 
     $vistas = "404";
 
@@ -12,7 +12,7 @@
         "todosManga" => [
             "title" => "Manga"
         ],
-        "accion" => [
+        "mangaXcat" => [
             "title" => "Acción"
         ],
         "fantasia" => [
