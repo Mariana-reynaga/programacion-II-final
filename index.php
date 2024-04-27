@@ -1,5 +1,27 @@
 <?php
-
+    $viewsValidas= [
+        "home" => [
+            "title" : "M Point"
+        ]
+        "comics" => [
+            "title" : "Comics"
+        ]
+        "accion" => [
+            "title" : "Acción"
+        ]
+        "fantasia" => [
+            "title" : "Fantasía"
+        ]
+        "suspenso" => [
+            "title" : "Suspenso"
+        ]
+        "contacto" => [
+            "title" : "Contacto"
+        ]
+        "alumno" => [
+            "title" : "Datos de Alumno"
+        ]
+    ]
 ?>
 
 <!DOCTYPE html>
