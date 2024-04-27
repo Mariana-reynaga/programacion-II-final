@@ -9,8 +9,8 @@
                 <li class="nav-item"><a href="index.php?sec=mangaXcat&gen=accion" class="nav-link">Acción</a></li>
                 <li class="nav-item"><a href="index.php?sec=mangaXcat&gen=fantasia" class="nav-link">Fantasía</a></li>
                 <li class="nav-item"><a href="index.php?sec=mangaXcat&gen=suspenso" class="nav-link">Suspenso</a></li>
-                <li class="nav-item"><a href="index.php?sec=" class="nav-link">Contacto</a></li>
-                <li class="nav-item"><a href="index.php?sec=" class="nav-link">Datos</a></li>
+                <li class="nav-item"><a href="index.php?sec=contacto" class="nav-link">Contacto</a></li>
+                <li class="nav-item"><a href="index.php?sec=datosAlum" class="nav-link">Datos</a></li>
             </ul>
         </header>
     </div>

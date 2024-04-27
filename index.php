@@ -13,18 +13,15 @@
             "title" => "Manga"
         ],
         "mangaXcat" => [
-            "title" => "Acción"
+            "title" => "Generos"
         ],
-        "fantasia" => [
-            "title" => "Fantasía"
-        ],
-        "suspenso" => [
-            "title" => "Suspenso"
+        "productoIndv" => [
+            "title" => "Detalles"
         ],
         "contacto" => [
             "title" => "Contacto"
         ],
-        "alumno" => [
+        "datosAlum" => [
             "title" => "Datos de Alumno"
         ],
     ];

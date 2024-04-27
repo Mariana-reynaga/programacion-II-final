@@ -12,13 +12,14 @@ class Manga{
 
     //metodos
 
-    //para traer el catalogo desde el json
+    //para traer los datos desde el json
     public function catalogo(){  //catalogo Completo
         $catalogo;
         $jsonProductos = file_get_contents("componente/productos.json");
         $json_datos = json_decode($jsonProductos, true);
 
         foreach($json_datos as $comicArray){
+            //inicializo
             $manga = new Manga();
 
             $manga-> id = $comicArray["id"];
@@ -38,16 +39,29 @@ class Manga{
 
     //catalogo por genero
     function catalogo_x_categoria($genero){
-        $mangas = $this->catalogo();
+        $mangas = $this->catalogo(); //traigo todo el catalogo
 
-        $generoCatalogo = [];
+        $generoCatalogo = []; //creo un array donde guardo los mangas que necesito
 
-        foreach ($mangas as $manga) {
-            if ($manga->genero == $genero) {
-                $generoCatalogo []= $manga;
+        foreach ($mangas as $manga) { //recorro el catalogo
+            if ($manga->genero == $genero) { //si el genero es el mismo del que necesito
+                $generoCatalogo []= $manga; //lo guargo en el array
             }
         }
         return $generoCatalogo;
+    }
+
+    //pagina individual 
+    function pag_indv(int $id): Manga | Array{
+        $mangas = $this->catalogo(); //traigo todo el catalogo
+
+        foreach ($mangas as $mangaIndv) {
+            if ($mangaIndv->id == $id) {
+                return $mangaIndv;
+            }
+        }
+
+        return [];
     }
 
     //getters 

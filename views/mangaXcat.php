@@ -24,7 +24,7 @@
 
                         <h3>$<?=$producto->getPrecio()?></h3>
                         
-                        <a href="index.php?cat=manga&id=<?= $producto->getId() ?>" class="btn btn-primary">Comprar</a>
+                        <a href="index.php?sec=productoIndv&id=<?= $producto->getId() ?>" class="btn btn-primary">Comprar</a>
                     </div>
                 </div>
             </div>
