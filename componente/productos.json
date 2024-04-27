@@ -1,0 +1,25 @@
+[
+    {"sinopsis": "Trunks del futuro vuelve al pasado una vez más. En su tiempo, un sujeto muy parecido a Son Goku, conocido como Goku Black, planea extinguir la raza humana. ¡¿Vegeta y Goku deberán viajar al futuro?!","genero": "accion","autor": "Akira Toriyama" ,"id": 1, "nombre": "Dragon Ball super" , "volumen": 3 , "precio": 2600, "portada": "dbs-v3.jpg" },
+
+    {"sinopsis": "Luego de varios minutos pasados y distintos giros de tuerca en el Lugar de Supervivencia del Reino de la Nada, el Gran Sacerdote anuncia que la batalla universal entre Son Goku y Jiren en el Torneo de la Fuerza está llegando a su punto clímax.","genero": "accion","autor": "Akira Toriyama" ,"id": 2, "nombre": "Dragon Ball super" , "volumen": 9 , "precio": 2600, "portada": "dbs-v9.jpg" },
+
+    {"sinopsis": "Cuando el grupo abre las puertas, son bienvenidos por Telence T. D'Arby, hermano menor de Daniel J. D'Arby y el mayordomo de la mansión. Su Stand, Atum, logra llevarse a Jotaro, Joseph y Kakyoin a un lugar más profundo de la mansión." , "volumen": 3 , "precio": 3000, "portada": "jjba-v3.jpg" },
+
+    {"sinopsis": "Una carrera de caballos a campo traviesa desde San Diego hasta la ciudad de Nueva York con un premio de cincuenta millones de dólares.","genero": "accion","autor": "Hirohiko Araki" ,"id": 4, "nombre": "Jojo's Bizzare Adventure: Steel Ball Run" , "volumen": 10 , "precio": 3500, "portada": "jjba-v10.jpg" },
+
+    {"sinopsis": "Falin finalmente ha resucitado y le ha dado la vuelta a su monstruoso devorador al disfrutar de una deliciosa cena de dragon con su grupo victorioso. Pero el señor de la mazmorra, Sissel, no está feliz de descubrir que su mascota favorita ha sido conquistada.","genero": "fantasia","autor": "Ryōko Kui" ,"id": 5, "nombre": "Dungeon Meshi" , "volumen": 5 , "precio": 2500, "portada": "dm-v5.jpg" },
+
+    {"sinopsis": "Comer es vivir. Con el demonio preparado para saciar su apetito en todos los pueblos de la superficie, Laios es el único que puede detener a la bestia.","genero": "fantasia","autor": "Ryōko Kui" ,"id": 6, "nombre": "Dungeon Meshi" , "volumen": 14 , "precio": 2500, "portada": "dm-v14.jpg" },
+
+    {"sinopsis": "Nene y los demás participaban en el campamento escolar, cuando de repente apareció el sexto misterio y secuestró a Aoi, la mejor amiga de Nene. Para rescatarla, Nene, Hanako-Kun y Akane se adentran en la frontera del sexto misterio, pero algo más los esperaba ahí.","genero": "fantasia","autor": "AidaIro" ,"id": 7, "nombre": "Toilet Bound Hanako-kun" , "volumen": 13, "precio": 1500, "portada": "tbhk-v13.jpg" },
+
+    {"sinopsis": "Kou Minamoto se encuentra vigilando a Hanako-Kun. Ahora ha decidido ayudar a un fantasma que hace maldades en la entrada de la escuela, a resolver sus asuntos pendientes, para que pueda descansar en paz.","genero": "fantasia","autor": "AidaIro" ,"id": 8, "nombre": "Toilet Bound Hanako-kun" , "volumen": 4, "precio": 1500, "portada": "tbhk-v4.jpg" },
+
+    {"sinopsis": "Una linda chica llamada Aiko se transfiere a la clase de Punpun e inspira su sueño de colonizar la estrella Punpunia.","genero": "suspenso","autor": "Inio Asano" ,"id": 9, "nombre":"Oyasumi Punpun" , "volumen": 1 , "precio": 5000, "portada": "opp-v1.jpg" },
+
+    {"sinopsis": "Aiko y Punpun viajan a través de ciudades, viviendo en moteles y tiendas de conveniencia, mientras la cordura de Punpun continúa desmoronándose.","genero": "suspenso","autor": "Inio Asano" ,"id": 10, "nombre":"Oyasumi Punpun" , "volumen": 12, "precio": 5000, "portada": "opp-v12.jpg"},
+
+    {"sinopsis": "En una clase de secundaria varios adolescentes están hablando sobre el misterioso homicidio de una de sus compañeras Tomie Kawakami, cuyo cuerpo descuartizado ha sido descubierto a lo largo de la ciudad.","genero": "suspenso","autor": "Junji Ito" ,"id": 11, "nombre": "Tomie" , "volumen": 1, "precio": 7000, "portada": "tommie-v1.jpg"},
+
+    {"sinopsis": "Después de descubrir que está embarazada de su hijo, el maestro de Tomie, el Sr. Takagi, mata a Tomie y hace que la clase lo ayude a dividir su cuerpo y deshacerse de él en varios lugares, sin esperar nunca que ella regrese.","genero": "suspenso","autor": "Junji Ito" ,"id": 12, "nombre": "Tomie" , "volumen": 2, "precio": 7000, "portada": "tommie-v2.jpg"}
+]

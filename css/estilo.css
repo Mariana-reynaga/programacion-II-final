@@ -1,0 +1,15 @@
+#banner{
+    height: 30vw;
+}
+
+#footer{
+    height: 10vw;
+}
+
+#row-footer{
+    width: 50%;
+}
+
+.fondo-container{
+    background-color: #FFFAF1;
+}
