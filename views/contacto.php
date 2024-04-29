@@ -1,14 +1,25 @@
+<style>
+    #boton{
+        border-color: #2B2D42; 
+        color:#2B2D42;
+    } #boton:hover{
+        background-color: #2B2D42;
+        color: white;
+    }
+
+</style>
+
 <div class="container-fluid">
         <h1 class="text-center mt-4">Contacto</h1>
 
-        <div class="container d-flex p-3 mt-4" style="background-color: #E1E1E1;">
+        <div class="container d-flex p-3 mt-4" style="background-color: #2EC4B6;">
             <div class="container d-flex flex-column justify-content-center">
-                <p>En caso de dudas, consultas o comentarios respecto a nuestros servicios o pedidos, porfavor utilizar el siguiente formulario para contactarnos.</p>
-                <p>Responderemos su mensaje en 3-4 dias habiles.</p>
+                <p class="fs-4">En caso de dudas, consultas o comentarios respecto a nuestros servicios o pedidos, porfavor utilizar el siguiente formulario para contactarnos.</p>
+                <p class="fs-4">Responderemos su mensaje en 3-4 dias habiles.</p>
             </div>
 
             <div class="container">
-                <form>
+                <form class="p-4">
                     <div class="container d-flex px-0 mb-3">
 
                         <div class="container">
@@ -49,7 +60,9 @@
                         </div>
                     </div>
                     
-                    <button type="submit" class="btn btn-outline-primary btn-lg">Enviar</button>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-primary btn-lg" id="boton">Enviar</button>
+                    </div>
                 </form>
             </div>
         </div>

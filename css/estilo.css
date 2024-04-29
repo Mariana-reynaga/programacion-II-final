@@ -1,5 +1,10 @@
+#body{
+    background-color: #EDF2F4;
+}
+
 #banner{
     height: 30vw;
+    background-size: cover;
 }
 
 #footer{

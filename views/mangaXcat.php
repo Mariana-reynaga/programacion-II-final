@@ -4,6 +4,18 @@
     $mangas =(new Manga())->catalogo_x_categoria($generoSelec);
 ?>
 
+<style>
+    #boton{
+        border-color: #2B2D42; 
+        color:#2B2D42;
+        background-color: white;
+    } #boton:hover{
+        background-color: #2B2D42;
+        color: white;
+    }
+
+</style>
+
 <h1 class="text-center my-4"><?= $generoSelec ?></h1>
 
 <div class="container">    
@@ -24,7 +36,7 @@
 
                         <h3>$<?=$producto->getPrecio()?></h3>
                         
-                        <a href="index.php?sec=productoIndv&id=<?= $producto->getId() ?>" class="btn btn-primary">Comprar</a>
+                        <a href="index.php?sec=productoIndv&id=<?= $producto->getId() ?>" class="btn mt-2" id="boton">Comprar</a>
                     </div>
                 </div>
             </div>

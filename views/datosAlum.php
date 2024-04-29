@@ -1,7 +1,7 @@
 <div class="container-fluid d-flex flex-row m-4">
-    <div class="container p-4 d-flex justify-content-evenly" style="background-color: #E1E1E1;">
+    <div class="container p-4 d-flex justify-content-evenly" style="background-color: #2EC4B6;">
         <div class="d-flex align-items-center justify-content-center">
-            <img src="img/tbhk-v4.jpg" style="width: 20vw; height:20vw;">
+            <img src="img/foto-perfil.jpg" style="width: 20vw; height:20vw;">
         </div>
         
         <div class="container d-flex flex-column align-items-center justify-content-center m-0" style="width:50%">
