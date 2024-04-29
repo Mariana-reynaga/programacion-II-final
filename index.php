@@ -1,5 +1,6 @@
 <?php
     require_once "class/Manga.php";
+    require_once "funcion/procesarForm.php";
 
     $categoria = isset( $_GET["sec"] ) ? $_GET["sec"] : "home";
 

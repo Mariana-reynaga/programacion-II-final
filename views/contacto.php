@@ -19,44 +19,44 @@
             </div>
 
             <div class="container">
-                <form class="p-4">
+                <form class="p-4" method="post" action="funcion/procesarForm.php">
                     <div class="container d-flex px-0 mb-3">
 
                         <div class="container">
                             <label for="nombre" class="form-label">Nombre:</label>
-                            <input id="nombre" type="text" class="form-control" placeholder="nombre">
+                            <input name="nombre" id="nombre" type="text" class="form-control" placeholder="nombre" required>
                         </div>
                         <div class="container">
                             <label for="apellido" class="form-label">Apellido:</label>
-                            <input id="apellido" type="text" class="form-control" placeholder="apellido">
+                            <input name="apellido" id="apellido" type="text" class="form-control" placeholder="apellido" required>
                         </div>
                     </div>
                     
                     <div class="container my-3 ">
                         <label for="email" class="form-label">Correo Electronico:</label>
-                        <input id="email" type="email" class="form-control" placeholder="ejemplo@gmail.com">
+                        <input name="email" id="email" type="email" class="form-control" placeholder="ejemplo@gmail.com" required>
                     </div>
 
                     <div class="container my-3">
                         <p class="fs-3 fw-semibold">Motivo de consulta</p>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1"> Pedido </label>
+                            <label class="form-check-label" for="opcion"> Pedido </label>
+                            <input class="form-check-input" type="radio" name="opcion" value="pedido" required>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1"> Preguntas</label>
+                            <label class="form-check-label" for="opcion"> Preguntas</label>
+                            <input class="form-check-input" type="radio" name="opcion" value="preguntas">
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1"> Quejas </label>
+                            <label class="form-check-label" for="opcion"> Quejas </label>
+                            <input class="form-check-input" type="radio" name="opcion" value="quejas">
                         </div>
                     </div>
 
                     <div class="container my-3">
                         <div class="form-floating">
-                            <label for="textArea">Escriba su consulta aquí.</label>
-                            <textarea class="form-control" placeholder="Escriba su consulta aquí." id="textArea" style="height: 200px"></textarea>
+                            <label for="textArea"></label>
+                            <textarea class="form-control" placeholder="Escriba su consulta aquí." name="textArea" id="textArea" style="height: 200px" required></textarea>
                         </div>
                     </div>
                     
