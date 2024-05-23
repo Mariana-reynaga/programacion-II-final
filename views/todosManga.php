@@ -21,20 +21,23 @@
         <?php foreach ($mangas as $producto){ ?>
             <div class="col">
                 <div class="card m-3" style="width: 20vw;">
-                    <img src="<?=$producto->getPortada()?>" class="card-img-top">
+                    <img src="<?=$producto->getPortadaID()?>" class="card-img-top">
             
-                    <div class="card-header d-flex flex-column" style="min-height:8vw">
-                        <h2><?=$producto->getNombre()?></h2>
-        
-                        <p class="ms-3 mb-0 d-flex align-items-center">Autor: <?=$producto->getAutor() ?></p>
+                    <div class="card-header d-flex flex-column" style="min-height:2vw">
+                        <h2><?=$producto->getTitulo()?></h2>
                     </div>
             
-                    <div class="card-body d-flex flex-column">
+                    <div class="card-body d-flex flex-column mx-2">
+                        <ul class="list-group list-group-flush mb-2">
+                            <li class="list-group-item">Autor: <?=$producto->getAutorID() ?></li>
+                            <li class="list-group-item">Volumen: <?=$producto->getVolumen() ?></li>
+                        </ul>
+
                         <p class="card-text">"<?=$producto->getSinopsis()?>"</p>
 
-                        <h3>$<?=$producto->getPrecio()?></h3>
+                        <h3 class="mb-4">$<?=$producto->getPrecio()?></h3>
                         
-                        <a href="index.php?sec=productoIndv&id=<?= $producto->getId()?>" class="btn" id="boton">Comprar</a>
+                        <a href="index.php?sec=productoIndv&id=<?= $producto->getID()?>" class="btn" id="boton">Comprar</a>
                     </div>
                 </div>
             </div>

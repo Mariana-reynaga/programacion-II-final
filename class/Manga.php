@@ -2,101 +2,111 @@
 
 class Manga{
     //atributos
-    protected $id;
-    protected $nombre;
-    protected $autor;
+    protected $ID;
+    protected $portada_ID;
+    protected $autor_ID;
+    protected $titulo;
+    protected $sinopsis;
+    protected $genero;
     protected $volumen;
     protected $precio;
-    protected $portada;
-    protected $sinopsis;
+    protected $publicacion;
 
     //metodos
 
-    //para traer los datos desde el json
+    //para traer desde la base de datos
     public function catalogo(){  //catalogo Completo
-        $catalogo;
-        $jsonProductos = file_get_contents("componente/productos.json");
-        $json_datos = json_decode($jsonProductos, true);
 
-        foreach($json_datos as $comicArray){
-            //inicializo
-            $manga = new Manga();
+        $catalogo = [];
+        $conexion = new Conexion();
+        $db = $conexion->getConexion();
+        $query = 'SELECT * FROM `tabla-catalogo`';
+        $PDOStament = $db->prepare($query);
+        $PDOStament->setFetchMode(PDO::FETCH_CLASS, Manga::class);
+        $PDOStament->execute();
 
-            $manga-> id = $comicArray["id"];
-            $manga-> nombre = $comicArray["nombre"];
-            $manga-> autor = $comicArray["autor"];
-            $manga-> volumen = $comicArray["volumen"];
-            $manga-> precio = $comicArray["precio"];
-            $manga-> portada = $comicArray["portada"];
-            $manga-> sinopsis = $comicArray["sinopsis"];
-            $manga-> genero = $comicArray["genero"];
-
-            $catalogo [] = $manga; //hago el push
+        while ($comic = $PDOStament->fetch()) {
+            $catalogo[] = $comic;
         }
 
         return $catalogo;
     }
 
-    //catalogo por genero
-    function catalogo_x_categoria($genero){
-        $mangas = $this->catalogo(); //traigo todo el catalogo
-
-        $generoCatalogo = []; //creo un array donde guardo los mangas que necesito
-
-        foreach ($mangas as $manga) { //recorro el catalogo
-            if ($manga->genero == $genero) { //si el genero es el mismo del que necesito
-                $generoCatalogo []= $manga; //lo guargo en el array
-            }
-        }
-        return $generoCatalogo;
+    public function catalogo_x_categoria(string $genero)
+    {
+        $cat_x_genero = [];
+        $conexion = ( new Conexion() )->getConexion();
+        $query = "SELECT * FROM `tabla-catalogo` WHERE `genero` = '$genero'";
+        $PDOStament = $conexion->prepare($query);
+        $PDOStament->setFetchMode(PDO::FETCH_CLASS, self::class);
+        $PDOStament->execute();
+        $cat_x_genero = $PDOStament->fetchAll();
+        return $cat_x_genero;
     }
 
-    //pagina individual 
-    function pag_indv(int $id): Manga | Array{
-        $mangas = $this->catalogo(); //traigo todo el catalogo
-
-        foreach ($mangas as $mangaIndv) {
-            if ($mangaIndv->id == $id) {
-                return $mangaIndv;
-            }
-        }
-
-        return [];
+    public function catalogo_x_id(int $ID)
+    {
+        $conexion = ( new Conexion() )->getConexion();
+        $query = "SELECT * FROM `tabla-catalogo` WHERE ID = $ID";
+        $PDOStament = $conexion->prepare($query);
+        $PDOStament->setFetchMode(PDO::FETCH_CLASS, self::class);
+        $PDOStament->execute();
+        $manga = $PDOStament->fetch();
+        return isset($manga) ? $manga : false;
     }
 
-    //getters 
-    public function getId()
-        {
-                return $this->id;
-        }
+    /*Get the value of ID*/
+    public function getID()
+    {
+        return $this->ID;
+    }
 
-    public function getNombre()
-        {
-                return $this->nombre;
-        }
+    /*Get the value of portada_ID*/
+    public function getPortadaID()
+    {
+        return $this->portada_ID;
+    }
 
-    public function getVolumen()
-        {
-                return $this->volumen;
-        }
+    /*Get the value of autor_ID*/
+    public function getAutorID()
+    {
+        $autor = (new Autor()) ->get_x_id($this->autor_ID);
+        return $autor->getNombreAutor();
+    }
 
-    public function getPrecio()
-        {
-                return $this->precio;
-        }
+    /*Get the value of titulo*/
+    public function getTitulo()
+    {
+        return $this->titulo;
+    }
 
-    public function getAutor()
-        {
-                return $this->autor;
-        }
-
-    public function getPortada()
-        {
-                return $this->portada;
-        }    
-
+    /*Get the value of sinopsis*/
     public function getSinopsis()
-        {
-                return $this->sinopsis;
-        }    
-}
+    {
+        return $this->sinopsis;
+    }
+
+    /*Get the value of genero*/
+    public function getGenero()
+    {
+        return $this->genero;
+    }
+
+    /*Get the value of volumen*/
+    public function getVolumen()
+    {
+        return $this->volumen;
+    }
+
+    /*Get the value of precio*/
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+    /*Get the value of publicacion*/
+    public function getPublicacion()
+    {
+        return $this->publicacion;
+    }
+} 
