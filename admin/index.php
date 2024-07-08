@@ -20,6 +20,9 @@
         ],
         "agregarGeneroForm" => [
             "title" => "Agregar Genero"
+        ],
+        "eliminar-Comic" => [
+            "title" => "¿Esta seguro?"
         ]
         // "editarManga" =>[
         //     "title" => "Editar"

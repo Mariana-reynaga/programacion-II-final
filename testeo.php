@@ -2,6 +2,8 @@
     require_once "funcion/cargarClass.php";
 
     $conexion = new Conexion();
+    
+    $manga = (new Manga())->catalogo();
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +18,7 @@
     <title>Test</title>
 </head>
 <body>
+    <h1>Testeo</h1>
     <!-- <div class="container">
         <form action="imgSubirTest.php" method="POST" enctype="multipart/form-data">
             <div class="col-md-6 mb-3">
@@ -36,19 +39,19 @@
         </form>
     </div> -->
 
-    <div class="container d-flex p-2 border border-dark-subtle rounded mt-4">
-        <div class="container d-flex justify-content-evenly">
-            <img src="img/dbs-v3.jpg" class="rounded float-start" style="width: 25%;">
-            <div class="ms-2 d-flex flex-column justify-content-center">
-                <h3>titulo del manga</h3>
-                <p>Autor del manga</p>
-                <p>Volumen: 598</p>
+    <div class="container">
+        <div class="row row-cols-2">
+            <div class="col">
+                <?php foreach ($manga as $producto){ ?>
+                    <p><?= $producto->getTitulo() ?></p>
+                <?php }?>
             </div>
-        </div>
 
-        <div class="container d-flex justify-content-evenly flex-column">
-            <button class="btn bg-primary">editar</button>
-            <button class="btn bg-danger">eliminar</button>
+            <div class="col">
+                <?php foreach ($manga as $producto){ ?>
+                    <p><?= $producto->getPortadaID() ?></p>
+                <?php }?>
+            </div>
         </div>
     </div>
 </body>

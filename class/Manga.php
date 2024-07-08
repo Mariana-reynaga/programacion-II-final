@@ -61,11 +61,18 @@ class Manga{
         return $this->ID;
     }
 
-    /*Get the value of portada_ID*/
+    /*Trae la dirección de portada*/
     public function getPortada()
     {
         $portadaID = (new Portada())->get_x_id($this->portada_ID);
         return $portadaID->getImagenPortada();
+    }
+
+    /*Trae el ID de portada*/
+    public function getPortadaID()
+    {
+        $portada_id = (new Portada())->get_x_id($this->portada_ID);
+        return $portada_id->getID();
     }
 
     /*Get the value of alt text*/
@@ -136,7 +143,7 @@ class Manga{
     }
 
     public function eliminar($ID){
-        $conexion = (new Conexion())->getConexion();
+        $conexion_con_DB = (new Conexion())->getConexion();
         $query = "DELETE FROM `tabla-catalogo` WHERE `ID` = $ID";
         $PDOStament = $conexion_con_DB->prepare($query);
         $PDOStament->execute();  

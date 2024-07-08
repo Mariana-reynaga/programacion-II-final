@@ -16,28 +16,7 @@
 
 <h1 class="text-center my-4">Manga</h1>
 
-<div class="container">    
-    <!-- <?php foreach ($mangas as $producto){ ?>
-        <div class="container d-flex p-2 border border-dark-subtle rounded my-4">
-            
-            <div class="container d-flex justify-content-evenly" style="width: 80%;">
-
-                <img src="../img/portadas/<?=$producto->getPortada()?>" alt="<?= $producto->getTextoAlt() ?>" class="rounded float-start" style="width: 25%;">
-
-                <div class="ms-2 d-flex flex-column justify-content-center" style="width:50%">
-                    <h3><?=$producto->getTitulo()?></h3>
-                    <p><?=$producto->getAutorID()?></p>
-                    <p>Volumen: <?=$producto->getVolumen() ?> </p>
-                </div>
-            </div>
-
-            <div class="container d-flex justify-content-evenly flex-column" style="width: 20%;">
-                <button class="btn bg-primary">editar</button>
-                <button class="btn bg-danger">eliminar</button>
-            </div>
-        </div>
-    <?php }?> -->
-    
+<div class="container">  
     <div class="row row-cols-2 justify-content-center">
         <?php foreach ($mangas as $producto){ ?>
             <div class="col">
@@ -54,7 +33,11 @@
                                 <p class="card-text">Volumen: <?=$producto->getVolumen() ?></p>
 
                                 <button class="btn bg-primary">editar</button>
-                                <button class="btn bg-danger">eliminar</button>
+                                <button class="btn bg-danger">
+                                    <a href="index.php?sec=eliminar-Comic&id=<?= $producto->getID()?>" class="link-light link-underline-opacity-0">
+                                        eliminar
+                                    </a>
+                                </button>
                             </div>
                         </div>
                     </div>
