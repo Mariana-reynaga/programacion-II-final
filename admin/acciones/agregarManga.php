@@ -29,7 +29,6 @@
         header("Location: ../index.php?sec=home");
 
     } catch (\Throwable $th) {
-        die( $e->getMessage() );
-        
+        die( $th->getMessage() );
     }
 ?>

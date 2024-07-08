@@ -134,4 +134,11 @@ class Manga{
             "publicacion" => htmlspecialchars($publicacion)
         ]);                
     }
+
+    public function eliminar($ID){
+        $conexion = (new Conexion())->getConexion();
+        $query = "DELETE FROM `tabla-catalogo` WHERE `ID` = $ID";
+        $PDOStament = $conexion_con_DB->prepare($query);
+        $PDOStament->execute();  
+    }   
 } 

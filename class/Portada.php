@@ -72,6 +72,13 @@
             
             return $conexion_con_DB->lastInsertId();
         }
+
+        public function deleteIMG($ID){
+            $conexion_con_DB = (new Conexion())->getConexion();
+            $query = "DELETE FROM `tabla-portada` WHERE `ID` = $ID";
+            $PDOStament = $conexion_con_DB->prepare($query);
+            $PDOStament->execute();  
+        }
     }
 
 ?>
