@@ -1,14 +1,9 @@
 <?php
-    require_once "class/Manga.php";
-    require_once "class/Conexion.php";
-    require_once "class/Autor.php";
-
-    
     require_once "funcion/procesarForm.php";
 
-    $categoria = isset( $_GET["sec"] ) ? $_GET["sec"] : "home";
+    require_once "funcion/cargarClass.php";
 
-    $vistas = "error";
+    $categoria = isset( $_GET["sec"] ) ? $_GET["sec"] : "home";
 
     $viewsValidas= [
         "home" => [
@@ -29,12 +24,16 @@
         "datosAlum" => [
             "title" => "Datos de Alumno"
         ],
+        "carrito" =>[
+            "title" => "Carrito"
+        ],
     ];
 
     if( array_key_exists($categoria, $viewsValidas) ){
         $vistas = $categoria;
         $titulo = $viewsValidas[$categoria]["title"];
     }else{
+        $vistas = "error";
         $titulo = "Pagina no encontrada";
     };
 ?>

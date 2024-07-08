@@ -20,7 +20,7 @@
 <div class="container-fluid d-flex flex-row m-4">
         <div class="container p-4 d-flex" style="background-color: #FFBF69;">
             <div>
-                <img src="<?= $mangas->getPortadaID()?>">
+                <img src="img/portadas/<?=$mangas->getPortada()?>" alt="<?= $mangas->getTextoAlt() ?>" class="card-img">
             </div>
             
             <div class="container d-flex flex-column align-items-center">
@@ -34,7 +34,10 @@
                     <p class="fs-3 fw-semibold">Sinopsis:</p>
                     <p class="fs-4">"<?= $mangas->getSinopsis() ?>"</p>
 
-                    <button class="mt-4 btn btn-outline-primary btn-lg" id="boton">Comprar</button>
+                    <form action="admin/acciones/agregarAcarro.php" method="post">
+                        
+                        <button class="mt-4 btn btn-outline-primary btn-lg" id="boton">Comprar</button>
+                    </form>
                 </div>
             </div>
 

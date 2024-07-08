@@ -1,9 +1,5 @@
 <?php
-    $generoSelec = $_GET["gen"];
-
-    $mangas =(new Manga())->catalogo_x_categoria($generoSelec);
-
-    $categoria = (new Genero())->get_x_id($generoSelec);
+    $mangas =(new Manga() )->catalogo();
 ?>
 
 <style>
@@ -18,14 +14,14 @@
 
 </style>
 
-<h1 class="text-center my-4"><?= $categoria->getGenero() ?></h1>
+<h1 class="text-center my-4">Manga</h1>
 
 <div class="container">    
     <div class="row">
         <?php foreach ($mangas as $producto){ ?>
             <div class="col">
                 <div class="card m-3" style="width: 20vw;">
-                    <img src="img/portadas/<?=$producto->getPortada()?>" alt="<?= $producto->getTextoAlt() ?>" class="card-img-top">
+                    <img src="../img/portadas/<?=$producto->getPortada()?>" alt="<?= $producto->getTextoAlt() ?>" class="card-img-top">
             
                     <div class="card-header d-flex flex-column" style="min-height:2vw">
                         <h2><?=$producto->getTitulo()?></h2>
@@ -35,6 +31,7 @@
                         <ul class="list-group list-group-flush mb-2">
                             <li class="list-group-item">Autor: <?=$producto->getAutorID() ?></li>
                             <li class="list-group-item">Volumen: <?=$producto->getVolumen() ?></li>
+                            <li class="list-group-item">Genero: <?=$producto->getNombreGenero() ?></li>
                         </ul>
 
                         <p class="card-text">"<?=$producto->getSinopsis()?>"</p>

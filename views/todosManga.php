@@ -1,6 +1,6 @@
 <?php
     $mangas =(new Manga() )->catalogo();
-?>
+?>  
 
 <style>
     #boton{
@@ -21,7 +21,7 @@
         <?php foreach ($mangas as $producto){ ?>
             <div class="col">
                 <div class="card m-3" style="width: 20vw;">
-                    <img src="<?=$producto->getPortadaID()?>" class="card-img-top">
+                    <img src="img/portadas/<?=$producto->getPortada()?>" alt="<?= $producto->getTextoAlt() ?>" class="card-img-top">
             
                     <div class="card-header d-flex flex-column" style="min-height:2vw">
                         <h2><?=$producto->getTitulo()?></h2>
@@ -31,6 +31,7 @@
                         <ul class="list-group list-group-flush mb-2">
                             <li class="list-group-item">Autor: <?=$producto->getAutorID() ?></li>
                             <li class="list-group-item">Volumen: <?=$producto->getVolumen() ?></li>
+                            <li class="list-group-item">Genero: <?=$producto->getNombreGenero() ?></li>
                         </ul>
 
                         <p class="card-text">"<?=$producto->getSinopsis()?>"</p>

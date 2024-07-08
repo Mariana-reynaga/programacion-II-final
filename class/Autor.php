@@ -57,6 +57,19 @@
     
             return isset($resultado) ? $resultado : null; //el isset checkea que este seteado el id, si existe devuelve resultado, si no devuelve un null
         }
+
+        //Traer la lista de Autores completa
+        public function autores_completo(){
+                $conexion_con_DB = (new Conexion())->getConexion();
+                $query = "SELECT * FROM `tabla-autor`";
+                $PDOStament = $conexion_con_DB->prepare($query);
+                $PDOStament->setFetchMode(PDO::FETCH_CLASS, self::class);
+                $PDOStament->execute();
+        
+                $listaAutores = $PDOStament->fetchAll();
+        
+                return $listaAutores ? $listaAutores : [];                
+        }
     }
 
 ?>

@@ -7,7 +7,7 @@ class Manga{
     protected $autor_ID;
     protected $titulo;
     protected $sinopsis;
-    protected $genero;
+    protected $genero_ID;
     protected $volumen;
     protected $precio;
     protected $publicacion;
@@ -32,11 +32,11 @@ class Manga{
         return $catalogo;
     }
 
-    public function catalogo_x_categoria(string $genero)
+    public function catalogo_x_categoria(int $genero_ID)
     {
         $cat_x_genero = [];
         $conexion = ( new Conexion() )->getConexion();
-        $query = "SELECT * FROM `tabla-catalogo` WHERE `genero` = '$genero'";
+        $query = "SELECT * FROM `tabla-catalogo` WHERE `genero_ID` = '$genero_ID'";
         $PDOStament = $conexion->prepare($query);
         $PDOStament->setFetchMode(PDO::FETCH_CLASS, self::class);
         $PDOStament->execute();
@@ -62,9 +62,17 @@ class Manga{
     }
 
     /*Get the value of portada_ID*/
-    public function getPortadaID()
+    public function getPortada()
     {
-        return $this->portada_ID;
+        $portadaID = (new Portada())->get_x_id($this->portada_ID);
+        return $portadaID->getImagenPortada();
+    }
+
+    /*Get the value of alt text*/
+    public function getTextoAlt()
+    {
+        $txt = (new Portada())->get_x_id($this->portada_ID);
+        return $txt->getTextoAlt();
     }
 
     /*Get the value of autor_ID*/
@@ -86,10 +94,11 @@ class Manga{
         return $this->sinopsis;
     }
 
-    /*Get the value of genero*/
-    public function getGenero()
+    /*Get the nombre of genero*/
+    public function getNombreGenero()
     {
-        return $this->genero;
+        $genero = (new Genero()) ->get_x_id($this->genero_ID);
+        return $genero->getGenero();
     }
 
     /*Get the value of volumen*/
@@ -108,5 +117,22 @@ class Manga{
     public function getPublicacion()
     {
         return $this->publicacion;
+    }
+
+    public function insert($portada_ID, $autor_ID, $genero_ID, $titulo, $sinopsis, $volumen, $precio, $publicacion){
+        $conexion = (new Conexion())->getConexion();
+        $query = "INSERT INTO `tabla-catalogo`(`ID`, `portada_ID`, `autor_ID`, `genero_ID`, `titulo`, `sinopsis`, `volumen`, `precio`, `publicacion`) VALUES (NULL, :portada_ID, :autor_ID, '$genero_ID', :titulo, :sinopsis, :volumen, :precio, :publicacion)";
+        echo $query;
+        $PDOStament = $conexion->prepare($query);
+        $PDOStament->execute([
+            "portada_ID" => htmlspecialchars($portada_ID),
+            "autor_ID" => htmlspecialchars($autor_ID),
+            // "genero_ID" => htmlspecialchars($genero_ID),
+            "titulo" => htmlspecialchars($titulo),
+            "sinopsis" => htmlspecialchars($sinopsis),
+            "volumen" => htmlspecialchars($volumen),
+            "precio" => htmlspecialchars($precio),
+            "publicacion" => htmlspecialchars($publicacion)
+        ]);                
     }
 } 
