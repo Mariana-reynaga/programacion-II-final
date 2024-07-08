@@ -20,8 +20,11 @@
             <span class="fs-4 fw-bold" style="color: #2B2D42">M Point</span>
         </a>
 
-        <div class="dropdown">
-                <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="index.php?sec=todosManga" class="nav-link">Manga</a></li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Secciones
                 </a>
 
@@ -34,12 +37,11 @@
                         </li>
                     <?php } ?>
                 </ul>
-        </div>
+            </li>
 
-        <ul class="nav nav-pills">
-            <li class="nav-item"><a href="index.php?sec=todosManga" class="nav-link">Manga</a></li>
             <li class="nav-item"><a href="index.php?sec=contacto" class="nav-link">Contacto</a></li>
             <li class="nav-item"><a href="index.php?sec=datosAlum" class="nav-link">Datos</a></li>
+            
         </ul>
     </header>
 </div>
