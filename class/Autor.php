@@ -64,6 +64,13 @@
                         "nombre_autor" => htmlspecialchars($nombre_autor),
                 ]);
         }
+
+        public function eliminarAutor($ID){
+                $conexion_con_DB = (new Conexion())->getConexion();
+                $query = "DELETE FROM `tabla-autor` WHERE `ID` = $ID";
+                $PDOStament = $conexion_con_DB->prepare($query);
+                $PDOStament->execute();  
+            }  
     }
 
 ?>

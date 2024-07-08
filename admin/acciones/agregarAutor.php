@@ -11,7 +11,7 @@
             $_POST["nomYap"],
         );
         
-        header("Location: ../index.php?sec=home");
+        header("Location: ../index.php?sec=autor-admin");
 
     }catch (\Throwable $th) {
         die( $th->getMessage() );  

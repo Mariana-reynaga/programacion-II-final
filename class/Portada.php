@@ -79,6 +79,21 @@
             $PDOStament = $conexion_con_DB->prepare($query);
             $PDOStament->execute();  
         }
-    }
 
+        // public function deleteFile(string $imagen_portada) :bool {
+        //     if (file_exists($imagen_portada)) {
+        //         $eliminar = unlink($imagen_portada)
+                
+        //         if ($eliminar) {
+        //             return true;
+        //         }else{
+        //             throw new Exception("No se pudo borrar imagen");
+        //             return false;
+        //         }
+        //     }else{
+        //         return true
+        //     }
+        // }
+
+    }
 ?>
