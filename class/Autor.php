@@ -2,8 +2,6 @@
     class Autor{
         protected $ID;
         protected $nombre_autor;
-        protected $foto_autor;
-
 
         /*Get the value of ID*/
         public function getID()
@@ -33,20 +31,6 @@
                 return $this;
         }
 
-        /*Get the value of foto_autor*/
-        public function getFotoAutor()
-        {
-                return $this->foto_autor;
-        }
-
-        /*Set the value of foto_autor*/
-        public function setFotoAutor($foto_autor): self
-        {
-                $this->foto_autor = $foto_autor;
-
-                return $this;
-        }
-
         public function get_x_id(int $ID) :?self /*el ":?" significa que A VECES no va a devolver un autor*/ {
             $conexion_con_DB = (new Conexion())->getConexion();
             $query = "SELECT * FROM `tabla-autor` WHERE ID = $ID";
@@ -69,6 +53,16 @@
                 $listaAutores = $PDOStament->fetchAll();
         
                 return $listaAutores ? $listaAutores : [];                
+        }
+
+        public function insert($nombre_autor){
+                $conexion = (new Conexion())->getConexion();
+                $query = "INSERT INTO `tabla-autor`(`ID`, `nombre_autor`) VALUES (NULL, :nombre_autor)";
+
+                $PDOStament = $conexion->prepare($query);
+                $PDOStament->execute([
+                        "nombre_autor" => htmlspecialchars($nombre_autor),
+                ]);
         }
     }
 

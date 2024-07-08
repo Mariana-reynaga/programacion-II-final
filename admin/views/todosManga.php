@@ -38,7 +38,7 @@
 
                         <h3 class="mb-4">$<?=$producto->getPrecio()?></h3>
                         
-                        <a href="index.php?sec=productoIndv&id=<?= $producto->getID()?>" class="btn" id="boton">Comprar</a>
+                        <!-- <a href="index.php?sec=productoIndv&id=<?= $producto->getID()?>" class="btn" id="boton">Comprar</a> -->
                     </div>
                 </div>
             </div>

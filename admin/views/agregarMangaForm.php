@@ -5,6 +5,7 @@
 ?>
 
 <div class="container mt-3">
+    <h1 class="text-center mb-5">Agregar un nuevo Manga</h1>
     <form action="acciones/agregarManga.php" method="POST" enctype="multipart/form-data" class="row">
         <div class="col">
             <div class="my-2">
@@ -73,13 +74,8 @@
         
 
 
-        <div class="container-fluid d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary">Cargar</button>
+        <div class="container-fluid d-flex justify-content-center mt-3">
+            <button type="submit" class="btn btn-primary py-2 px-3 fs-3">Cargar</button>
         </div>
     </form>
-    
-
-    <?php
-    
-    ?>
 </div>
