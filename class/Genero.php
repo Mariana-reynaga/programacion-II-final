@@ -50,6 +50,15 @@
                 return $listaGenero ? $listaGenero : [];                
         }
 
-    }
+        public function insert($genero){
+            $conexion = (new Conexion())->getConexion();
+            $query = "INSERT INTO `tabla-genero`(`ID`, `genero`) VALUES (NULL , :genero)";
 
+            $PDOStament = $conexion->prepare($query);
+            $PDOStament->execute([
+                        "genero" => htmlspecialchars($genero),
+                ]);
+        }
+
+    }
 ?>

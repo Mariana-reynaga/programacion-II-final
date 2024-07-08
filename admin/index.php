@@ -17,6 +17,9 @@
         ],
         "agregarAutorForm" => [
             "title" => "Agregar Autor"
+        ],
+        "agregarGeneroForm" => [
+            "title" => "Agregar Genero"
         ]
         // "editarManga" =>[
         //     "title" => "Editar"
@@ -66,6 +69,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="index.php?sec=agregarMangaForm" class="dropdown-item">agregar Manga</a></li>
                     <li><a href="index.php?sec=agregarAutorForm" class="dropdown-item">Agregar Autor</a></li>
+                    <li><a href="index.php?sec=agregarGeneroForm" class="dropdown-item">Agregar Genero</a></li>
                 </ul>
             </div>
         </header>
