@@ -87,7 +87,7 @@
                 if ($eliminar) {
                     return true;
                 }else{
-                    throw new Exception("No se pudo borrar imagen");
+                    throw new Exception("La imagen no se pudo borrar");
                     return false;
                 };
 

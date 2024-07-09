@@ -70,7 +70,18 @@
                 $query = "DELETE FROM `tabla-autor` WHERE `ID` = $ID";
                 $PDOStament = $conexion_con_DB->prepare($query);
                 $PDOStament->execute();  
-            }  
+        }
+        
+        public function editarAutor($nombre_autor, $ID){
+                $conexion_con_DB = (new Conexion())->getConexion();
+                $query = "UPDATE `tabla-autor` SET `ID`= :ID ,`nombre_autor`= :nombre_autor WHERE `ID` = $ID";
+                
+                $PDOStament = $conexion_con_DB->prepare($query);
+                $PDOStament->execute([
+                        "nombre_autor" => htmlspecialchars($nombre_autor),
+                        "ID" => htmlspecialchars($ID),
+                ]);
+        }
     }
 
 ?>

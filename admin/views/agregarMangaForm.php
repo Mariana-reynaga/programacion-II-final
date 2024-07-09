@@ -75,7 +75,7 @@
 
 
         <div class="container-fluid d-flex justify-content-center mt-3">
-            <button type="submit" class="btn btn-primary py-2 px-3 fs-3">Cargar</button>
+            <button type="submit" class="btn add py-2 px-3 fs-3">Cargar</button>
         </div>
     </form>
 </div>

@@ -31,12 +31,15 @@
                                 <h5 class="card-title"><?=$producto->getTitulo()?></h5>
                                 <p class="card-text"><?=$producto->getAutorID()?></p>
                                 <p class="card-text">Volumen: <?=$producto->getVolumen() ?></p>
+                                
+                                <a href="index.php?sec= &id=<?= $producto->getID()?>" class="btn add">
+                                    editar
+                                </a>
 
-                                <button class="btn bg-primary">editar</button>
-                                <button class="btn bg-danger">
-                                    <a href="index.php?sec=eliminar-Comic&id=<?= $producto->getID()?>" class="link-light link-underline-opacity-0">
-                                        eliminar
-                                    </a>
+                                <a href="index.php?sec=eliminar-Comic&id=<?= $producto->getID()?>" class="btn elim">
+                                    eliminar
+                                </a>
+                                
                                 </button>
                             </div>
                         </div>

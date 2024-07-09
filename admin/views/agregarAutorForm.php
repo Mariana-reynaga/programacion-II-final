@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="container-fluid d-flex justify-content-center mt-3">
-                    <button type="submit" class="btn btn-primary py-2 px-3 fs-4">Cargar</button>
+                    <button type="submit" class="btn py-2 px-3 fs-4 add">Cargar</button>
                 </div>
           </form>
         </div>

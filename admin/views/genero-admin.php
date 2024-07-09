@@ -8,10 +8,11 @@
 <div class="container">  
     <div class="row row-cols-2 g-3">
         <?php foreach ($generos as $genero){ ?>
-            <div class="card w-25 mx-3"> 
-                <div class="card-body d-flex justify-content-evenly">
+            <div class="card mx-3" style="width: 30%;"> 
+                <div class="card-body d-flex justify-content-evenly align-items-center">
                     <h5 class="card-title"><?= $genero->getGenero()?></h5>
-                    <a href="index.php?sec=eliminar-genero&id=<?= $genero->getID()?>" class="btn btn-danger">Eliminar</a>
+                    <a href="index.php?sec= &id=<?= $genero->getID()?>" class="btn add">Editar</a>
+                    <a href="index.php?sec=eliminar-genero&id=<?= $genero->getID()?>" class="btn elim">Eliminar</a>
                 </div>
             </div>
 

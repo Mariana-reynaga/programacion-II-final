@@ -1,0 +1,12 @@
+.add{
+    background-color: #FFBF69;
+}
+.add:hover{
+    border: solid 1px #FF9F1C;
+}
+.elim{
+    background-color: #dc3545;
+}
+.elim:hover{
+    border: solid 1px #dc3545;
+}
