@@ -24,10 +24,16 @@
         "autor-admin" => [
             "title" => "Autores"
         ],
+        "genero-admin" => [
+            "title" => "Generos"
+        ],
         "eliminar-Comic" => [
             "title" => "¿Esta seguro?"
         ],
         "eliminar-autor" => [
+            "title" => "¿Esta seguro?"
+        ],
+        "eliminar-genero" => [
             "title" => "¿Esta seguro?"
         ]
         // "editarManga" =>[
@@ -61,13 +67,14 @@
     <div class="container-fluid" style="background-color: #CBF3F0;">
         <header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
             <a href="index.php?sec=home" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <span class="fs-4 fw-bold" style="color: #2B2D42">M Point</span>
+                <span class="fs-4 fw-bold" style="color: #2B2D42">M Point Admin</span>
             </a>
 
 
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="index.php?sec=todosManga" class="nav-link">Manga</a></li>
                 <li class="nav-item"><a href="index.php?sec=autor-admin" class="nav-link">Autores</a></li>
+                <li class="nav-item"><a href="index.php?sec=genero-admin" class="nav-link">Generos</a></li>
                 <!-- <li class="nav-item"><a href="index.php?sec=editarManga" class="nav-link">editar Manga</a></li> -->
             </ul>
 

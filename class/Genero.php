@@ -60,5 +60,11 @@
                 ]);
         }
 
+        public function eliminarGenero($ID){
+            $conexion_con_DB = (new Conexion())->getConexion();
+            $query = "DELETE FROM `tabla-genero` WHERE `ID` = $ID";
+            $PDOStament = $conexion_con_DB->prepare($query);
+            $PDOStament->execute();  
+        }
     }
 ?>
