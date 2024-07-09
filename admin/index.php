@@ -38,6 +38,9 @@
         ],
         "editar-autor" =>[
             "title" => "Editar autor"
+        ],
+        "editar-genero" =>[
+            "title" => "Editar genero"
         ]
     ];
 

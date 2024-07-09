@@ -66,5 +66,16 @@
             $PDOStament = $conexion_con_DB->prepare($query);
             $PDOStament->execute();  
         }
+
+        public function editarGenero($genero, $ID){
+            $conexion_con_DB = (new Conexion())->getConexion();
+            $query = "UPDATE `tabla-genero` SET `ID`= :ID,`genero`= :genero WHERE `ID` = $ID";
+            
+            $PDOStament = $conexion_con_DB->prepare($query);
+            $PDOStament->execute([
+                    "genero" => htmlspecialchars($genero),
+                    "ID" => htmlspecialchars($ID),
+            ]); 
+        }
     }
 ?>
