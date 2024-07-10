@@ -127,10 +127,10 @@ class Manga{
     }
 
     public function insert($portada_ID, $autor_ID, $genero_ID, $titulo, $sinopsis, $volumen, $precio, $publicacion){
-        $conexion = (new Conexion())->getConexion();
+        $conexion_con_DB = (new Conexion())->getConexion();
         $query = "INSERT INTO `tabla-catalogo`(`ID`, `portada_ID`, `autor_ID`, `genero_ID`, `titulo`, `sinopsis`, `volumen`, `precio`, `publicacion`) VALUES (NULL, :portada_ID, :autor_ID, '$genero_ID', :titulo, :sinopsis, :volumen, :precio, :publicacion)";
         echo $query;
-        $PDOStament = $conexion->prepare($query);
+        $PDOStament = $conexion_con_DB->prepare($query);
         $PDOStament->execute([
             "portada_ID" => htmlspecialchars($portada_ID),
             "autor_ID" => htmlspecialchars($autor_ID),
@@ -149,7 +149,20 @@ class Manga{
         $PDOStament->execute();  
     }
 
-    public function editarManga(){
-        
+    public function editarManga($autor_ID, $genero_ID, $titulo, $sinopsis, $volumen, $precio, $publicacion, $ID){
+        $conexion_con_DB = (new Conexion())->getConexion();
+        $query = "UPDATE `tabla-catalogo` SET `autor_ID`= :autor_ID,`genero_ID`= $genero_ID,`titulo`= :titulo,`sinopsis`= :sinopsis,`volumen`= :volumen,`precio`= :precio,`publicacion`= :publicacion WHERE `ID` = $ID";
+
+        $PDOStament = $conexion_con_DB->prepare($query);
+        $PDOStament->execute([
+            "autor_ID" => htmlspecialchars($autor_ID),
+            // "genero_ID" => htmlspecialchars($genero_ID),
+            "titulo" => htmlspecialchars($titulo),
+            "sinopsis" => htmlspecialchars($sinopsis),
+            "volumen" => htmlspecialchars($volumen),
+            "precio" => htmlspecialchars($precio),
+            "publicacion" => htmlspecialchars($publicacion)
+        ]);
     }
+
 } 
