@@ -41,6 +41,9 @@
         ],
         "editar-genero" =>[
             "title" => "Editar genero"
+        ],
+        "editar-manga" =>[
+            "title" => "Editar manga"
         ]
     ];
 
@@ -80,7 +83,6 @@
                 <li class="nav-item"><a href="index.php?sec=todosManga" class="nav-link">Manga</a></li>
                 <li class="nav-item"><a href="index.php?sec=autor-admin" class="nav-link">Autores</a></li>
                 <li class="nav-item"><a href="index.php?sec=genero-admin" class="nav-link">Generos</a></li>
-                <!-- <li class="nav-item"><a href="index.php?sec=editarManga" class="nav-link">editar Manga</a></li> -->
             </ul>
 
             <div class="dropdown">

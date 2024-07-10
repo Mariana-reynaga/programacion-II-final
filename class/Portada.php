@@ -48,6 +48,7 @@
             return isset($resultado) ? $resultado : null;
         }
 
+        //subir imagen a la carpeta portadas
         public function subirImagen($imagen, string $directorio) : string{
         if( !empty($imagen["tmp_name"]) ){
                 $name = uniqid()."-".$imagen["name"];
@@ -60,6 +61,7 @@
             }
         }
 
+        //subir imagen a la base de datos
         public function insertarImg($imagen_portada, $texto_alt){
             $conexion_con_DB = (new Conexion())->getConexion();
 
@@ -73,6 +75,7 @@
             return $conexion_con_DB->lastInsertId();
         }
 
+        //eliminar imagen de la base de datos
         public function deleteIMG($ID){
             $conexion_con_DB = (new Conexion())->getConexion();
             $query = "DELETE FROM `tabla-portada` WHERE `ID` = $ID";
@@ -80,6 +83,7 @@
             $PDOStament->execute();  
         }
 
+        //eliminar imagen de la carpeta portadas
         public function deleteFile(string $imagen_portada) :bool {
             if (file_exists($imagen_portada)) {
                 $eliminar = unlink($imagen_portada);
@@ -96,5 +100,17 @@
             }
         }
 
+        //reemplazar la imagen en la base de datos
+        public function reemplazarIMG($ID, $imagen_portada, $texto_alt){
+            $conexion_con_DB = (new Conexion())->getConexion();
+            $query = "UPDATE `tabla-portada` SET `imagen_portada`= :imagen_portada ,`texto_alt`= :texto_alt WHERE `ID` = $ID";
+
+            $PDOStament = $conexion_con_DB->prepare($query);
+
+            $PDOStament->execute([
+                        "imagen_portada" => htmlspecialchars($imagen_portada),
+                        "texto_alt" => htmlspecialchars($texto_alt)
+            ]);
+        }
     }
 ?>

@@ -147,5 +147,9 @@ class Manga{
         $query = "DELETE FROM `tabla-catalogo` WHERE `ID` = $ID";
         $PDOStament = $conexion_con_DB->prepare($query);
         $PDOStament->execute();  
-    }   
+    }
+
+    public function editarManga(){
+        
+    }
 } 

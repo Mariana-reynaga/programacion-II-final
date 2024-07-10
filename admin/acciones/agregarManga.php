@@ -7,7 +7,6 @@
     echo "</pre>";
 
     try {
-        
         $name = (new Portada())->subirImagen($_FILES["portada"], "../../img/portadas");
         
         $portada = (new Portada())->insertarImg(

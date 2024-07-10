@@ -32,7 +32,7 @@
                                 <p class="card-text"><?=$producto->getAutorID()?></p>
                                 <p class="card-text">Volumen: <?=$producto->getVolumen() ?></p>
                                 
-                                <a href="index.php?sec= &id=<?= $producto->getID()?>" class="btn add">
+                                <a href="index.php?sec=editar-manga&id=<?= $producto->getID()?>" class="btn add">
                                     editar
                                 </a>
 
