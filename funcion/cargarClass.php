@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    
     function cargarClass($nombreClase){
         $class = __DIR__."/../class/$nombreClase.php";
         if( file_exists($class) ){
