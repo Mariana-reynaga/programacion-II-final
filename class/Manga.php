@@ -82,11 +82,18 @@ class Manga{
         return $txt->getTextoAlt();
     }
 
-    /*Get the value of autor_ID*/
+    /*Trae el nombre del autor*/
     public function getAutorID()
     {
         $autor = (new Autor()) ->get_x_id($this->autor_ID);
         return $autor->getNombreAutor();
+    }
+
+    /*Trae el ID del autor*/
+    public function getAutorIden()
+    {
+        $autor = (new Autor()) ->get_x_id($this->autor_ID);
+        return $autor->getID();
     }
 
     /*Get the value of titulo*/
@@ -101,11 +108,18 @@ class Manga{
         return $this->sinopsis;
     }
 
-    /*Get the nombre of genero*/
+    /*Trae el nombre de genero*/
     public function getNombreGenero()
     {
         $genero = (new Genero()) ->get_x_id($this->genero_ID);
         return $genero->getGenero();
+    }
+
+    /*Trae el id de genero*/
+    public function getGeneroID()
+    {
+        $genero = (new Genero()) ->get_x_id($this->genero_ID);
+        return $genero->getID();
     }
 
     /*Get the value of volumen*/

@@ -24,8 +24,11 @@
                 <label for="autor" class="form-label">Autor</label>
                 <select name="autor" id="autor" class="form-select" required>
                     <option value="" selected disabled>Elija una Autor</option>
+
                     <?php foreach ($autores as $guionista) { ?>
-                        <option value="<?= $guionista->getID() ?>"> <?= $guionista->getNombreAutor() ?> </option>
+
+                        <option <?= $guionista->getID() === $manga->getAutorIden() ? "selected" : "" ?> value="<?= $guionista->getID() ?>"> <?= $guionista->getNombreAutor() ?> </option>
+
                     <?php } ?>
     
                 </select>
@@ -77,7 +80,9 @@
                 <select name="genero" id="genero" class="form-select" required>
                     <option value="" selected disabled>Elija una Genero</option>
                     <?php foreach ($genero as $generoSel) { ?>
-                        <option value="<?= $generoSel->getID() ?>"> <?= $generoSel->getGenero() ?> </option>
+
+                        <option <?= $generoSel->getID() === $manga->getGeneroID() ? "selected" : "" ?> value="<?= $generoSel->getID() ?>"> <?= $generoSel->getGenero() ?> </option>
+
                     <?php } ?>
     
                 </select>
