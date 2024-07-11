@@ -44,7 +44,7 @@
             $_POST["id"]
         );
 
-        header("Location: ../index.php?sec=home");
+        header("Location: ../index.php?sec=todosManga");
     } catch (Exception $e) {
         echo $e->getMessage();
     }

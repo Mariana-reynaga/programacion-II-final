@@ -41,11 +41,11 @@
         public function genero_completo(){
                 $conexion_con_DB = (new Conexion())->getConexion();
                 $query = "SELECT * FROM `tabla-genero`";
-                $PDOStament = $conexion_con_DB->prepare($query);
-                $PDOStament->setFetchMode(PDO::FETCH_CLASS, self::class);
-                $PDOStament->execute();
+                $PDOStatement = $conexion_con_DB->prepare($query);
+                $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+                $PDOStatement->execute();
         
-                $listaGenero = $PDOStament->fetchAll();
+                $listaGenero = $PDOStatement->fetchAll();
         
                 return $listaGenero ? $listaGenero : [];                
         }
@@ -54,8 +54,8 @@
             $conexion = (new Conexion())->getConexion();
             $query = "INSERT INTO `tabla-genero`(`ID`, `genero`) VALUES (NULL , :genero)";
 
-            $PDOStament = $conexion->prepare($query);
-            $PDOStament->execute([
+            $PDOStatement = $conexion->prepare($query);
+            $PDOStatement->execute([
                         "genero" => htmlspecialchars($genero),
                 ]);
         }
@@ -63,16 +63,16 @@
         public function eliminarGenero($ID){
             $conexion_con_DB = (new Conexion())->getConexion();
             $query = "DELETE FROM `tabla-genero` WHERE `ID` = $ID";
-            $PDOStament = $conexion_con_DB->prepare($query);
-            $PDOStament->execute();  
+            $PDOStatement = $conexion_con_DB->prepare($query);
+            $PDOStatement->execute();  
         }
 
         public function editarGenero($genero, $ID){
             $conexion_con_DB = (new Conexion())->getConexion();
             $query = "UPDATE `tabla-genero` SET `ID`= :ID,`genero`= :genero WHERE `ID` = $ID";
             
-            $PDOStament = $conexion_con_DB->prepare($query);
-            $PDOStament->execute([
+            $PDOStatement = $conexion_con_DB->prepare($query);
+            $PDOStatement->execute([
                     "genero" => htmlspecialchars($genero),
                     "ID" => htmlspecialchars($ID),
             ]); 

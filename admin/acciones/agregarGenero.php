@@ -11,7 +11,7 @@
             $_POST["nomGenero"],
         );
         
-        header("Location: ../index.php?sec=home");
+        header("Location: ../index.php?sec=genero-admin");
 
     }catch (\Throwable $th) {
         die( $th->getMessage());  

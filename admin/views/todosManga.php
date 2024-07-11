@@ -17,7 +17,7 @@
 <h1 class="text-center my-4">Manga</h1>
 
 <div class="container">  
-    <div class="row row-cols-2 justify-content-center">
+    <div class="row row-cols-3">
         <?php foreach ($mangas as $producto){ ?>
             <div class="col">
                 <div class="card mb-3" style="max-width: 540px;">

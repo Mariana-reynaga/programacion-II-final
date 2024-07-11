@@ -15,7 +15,7 @@
 
             (new Portada())->deleteFile("../../img/portadas/".$portada->getImagenPortada()); 
             
-            header("Location: ../index.php?sec=home");
+            header("Location: ../index.php?sec=todosManga");
         }else{
             throw new Exception();
         }

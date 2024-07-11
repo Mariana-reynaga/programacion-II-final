@@ -47,6 +47,9 @@
         ],
         "logIn" =>[
             "title" => "Iniciar Sesión"
+        ],
+        "agregarUsuarioForm" =>[
+            "title" => "Agregar Usuario"
         ]
     ];
 
@@ -98,6 +101,7 @@
                             <li><a href="index.php?sec=agregarMangaForm" class="dropdown-item">agregar Manga</a></li>
                             <li><a href="index.php?sec=agregarAutorForm" class="dropdown-item">Agregar Autor</a></li>
                             <li><a href="index.php?sec=agregarGeneroForm" class="dropdown-item">Agregar Genero</a></li>
+                            <li><a href="index.php?sec=agregarUsuarioForm" class="dropdown-item">Agregar Usuario</a></li>
                         </ul>
                     </li>
 

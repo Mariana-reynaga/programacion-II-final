@@ -66,8 +66,8 @@
             $conexion_con_DB = (new Conexion())->getConexion();
 
             $query= "INSERT INTO `tabla-portada`(`ID`, `imagen_portada`, `texto_alt`) VALUES (NULL, :imagen_portada, :texto_alt)";
-            $PDOStament = $conexion_con_DB->prepare($query);
-            $PDOStament->execute([
+            $PDOStatement = $conexion_con_DB->prepare($query);
+            $PDOStatement->execute([
                 'imagen_portada' => htmlspecialchars($imagen_portada),
                 'texto_alt' => htmlspecialchars($texto_alt),
             ]);
@@ -79,8 +79,8 @@
         public function deleteIMG($ID){
             $conexion_con_DB = (new Conexion())->getConexion();
             $query = "DELETE FROM `tabla-portada` WHERE `ID` = $ID";
-            $PDOStament = $conexion_con_DB->prepare($query);
-            $PDOStament->execute();  
+            $PDOStatement = $conexion_con_DB->prepare($query);
+            $PDOStatement->execute();  
         }
 
         //eliminar imagen de la carpeta portadas
@@ -105,9 +105,9 @@
             $conexion_con_DB = (new Conexion())->getConexion();
             $query = "UPDATE `tabla-portada` SET `imagen_portada`= :imagen_portada ,`texto_alt`= :texto_alt WHERE `ID` = $ID";
 
-            $PDOStament = $conexion_con_DB->prepare($query);
+            $PDOStatement = $conexion_con_DB->prepare($query);
 
-            $PDOStament->execute([
+            $PDOStatement->execute([
                         "imagen_portada" => htmlspecialchars($imagen_portada),
                         "texto_alt" => htmlspecialchars($texto_alt)
             ]);

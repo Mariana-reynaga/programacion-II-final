@@ -46,11 +46,11 @@
         public function autores_completo(){
                 $conexion_con_DB = (new Conexion())->getConexion();
                 $query = "SELECT * FROM `tabla-autor`";
-                $PDOStament = $conexion_con_DB->prepare($query);
-                $PDOStament->setFetchMode(PDO::FETCH_CLASS, self::class);
-                $PDOStament->execute();
+                $PDOStatement = $conexion_con_DB->prepare($query);
+                $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+                $PDOStatement->execute();
         
-                $listaAutores = $PDOStament->fetchAll();
+                $listaAutores = $PDOStatement->fetchAll();
         
                 return $listaAutores ? $listaAutores : [];                
         }
@@ -59,8 +59,8 @@
                 $conexion = (new Conexion())->getConexion();
                 $query = "INSERT INTO `tabla-autor`(`ID`, `nombre_autor`) VALUES (NULL, :nombre_autor)";
 
-                $PDOStament = $conexion->prepare($query);
-                $PDOStament->execute([
+                $PDOStatement = $conexion->prepare($query);
+                $PDOStatement->execute([
                         "nombre_autor" => htmlspecialchars($nombre_autor),
                 ]);
         }
@@ -68,16 +68,16 @@
         public function eliminarAutor($ID){
                 $conexion_con_DB = (new Conexion())->getConexion();
                 $query = "DELETE FROM `tabla-autor` WHERE `ID` = $ID";
-                $PDOStament = $conexion_con_DB->prepare($query);
-                $PDOStament->execute();  
+                $PDOStatement = $conexion_con_DB->prepare($query);
+                $PDOStatement->execute();  
         }
         
         public function editarAutor($nombre_autor, $ID){
                 $conexion_con_DB = (new Conexion())->getConexion();
                 $query = "UPDATE `tabla-autor` SET `ID`= :ID ,`nombre_autor`= :nombre_autor WHERE `ID` = $ID";
                 
-                $PDOStament = $conexion_con_DB->prepare($query);
-                $PDOStament->execute([
+                $PDOStatement = $conexion_con_DB->prepare($query);
+                $PDOStatement->execute([
                         "nombre_autor" => htmlspecialchars($nombre_autor),
                         "ID" => htmlspecialchars($ID),
                 ]);

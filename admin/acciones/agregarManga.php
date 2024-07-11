@@ -25,7 +25,7 @@
             $_POST["publicacion"]
         );
 
-        header("Location: ../index.php?sec=home");
+        header("Location: ../index.php?sec=todosManga");
 
     } catch (Throwable $th) {
         die( $th->getMessage() );

@@ -6,7 +6,6 @@
             if(isset($usuario)){
                 if($usuario->getPassword() == $password){
                     $dataLogIn["usuario"] = $usuario->getNomUsuario();
-                    $dataLogIn["rol"] = $usuario->getRol();
                     $dataLogIn["id"] = $usuario->getID();
                     $_SESSION["login"] = $dataLogIn;
                     return true;

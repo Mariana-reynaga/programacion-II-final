@@ -11,7 +11,7 @@
             $_POST["id"]
         );
 
-        header("Location: ../index.php?sec=home");
+        header("Location: ../index.php?sec=admin-genero");
 
     }catch(Throwable $th){
 

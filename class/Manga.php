@@ -21,11 +21,11 @@ class Manga{
         $conexion = new Conexion();
         $db = $conexion->getConexion();
         $query = 'SELECT * FROM `tabla-catalogo`';
-        $PDOStament = $db->prepare($query);
-        $PDOStament->setFetchMode(PDO::FETCH_CLASS, Manga::class);
-        $PDOStament->execute();
+        $PDOStatement = $db->prepare($query);
+        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, Manga::class);
+        $PDOStatement->execute();
 
-        while ($comic = $PDOStament->fetch()) {
+        while ($comic = $PDOStatement->fetch()) {
             $catalogo[] = $comic;
         }
 
@@ -37,10 +37,10 @@ class Manga{
         $cat_x_genero = [];
         $conexion = ( new Conexion() )->getConexion();
         $query = "SELECT * FROM `tabla-catalogo` WHERE `genero_ID` = '$genero_ID'";
-        $PDOStament = $conexion->prepare($query);
-        $PDOStament->setFetchMode(PDO::FETCH_CLASS, self::class);
-        $PDOStament->execute();
-        $cat_x_genero = $PDOStament->fetchAll();
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+        $PDOStatement->execute();
+        $cat_x_genero = $PDOStatement->fetchAll();
         return $cat_x_genero;
     }
 
@@ -48,10 +48,10 @@ class Manga{
     {
         $conexion = ( new Conexion() )->getConexion();
         $query = "SELECT * FROM `tabla-catalogo` WHERE ID = $ID";
-        $PDOStament = $conexion->prepare($query);
-        $PDOStament->setFetchMode(PDO::FETCH_CLASS, self::class);
-        $PDOStament->execute();
-        $manga = $PDOStament->fetch();
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+        $PDOStatement->execute();
+        $manga = $PDOStatement->fetch();
         return isset($manga) ? $manga : false;
     }
 
@@ -143,9 +143,8 @@ class Manga{
     public function insert($portada_ID, $autor_ID, $genero_ID, $titulo, $sinopsis, $volumen, $precio, $publicacion){
         $conexion_con_DB = (new Conexion())->getConexion();
         $query = "INSERT INTO `tabla-catalogo`(`ID`, `portada_ID`, `autor_ID`, `genero_ID`, `titulo`, `sinopsis`, `volumen`, `precio`, `publicacion`) VALUES (NULL, :portada_ID, :autor_ID, '$genero_ID', :titulo, :sinopsis, :volumen, :precio, :publicacion)";
-        echo $query;
-        $PDOStament = $conexion_con_DB->prepare($query);
-        $PDOStament->execute([
+        $PDOStatement = $conexion_con_DB->prepare($query);
+        $PDOStatement->execute([
             "portada_ID" => htmlspecialchars($portada_ID),
             "autor_ID" => htmlspecialchars($autor_ID),
             "titulo" => htmlspecialchars($titulo),
@@ -159,16 +158,16 @@ class Manga{
     public function eliminar($ID){
         $conexion_con_DB = (new Conexion())->getConexion();
         $query = "DELETE FROM `tabla-catalogo` WHERE `ID` = $ID";
-        $PDOStament = $conexion_con_DB->prepare($query);
-        $PDOStament->execute();  
+        $PDOStatement = $conexion_con_DB->prepare($query);
+        $PDOStatement->execute();  
     }
 
     public function editarManga($autor_ID, $genero_ID, $titulo, $sinopsis, $volumen, $precio, $publicacion, $ID){
         $conexion_con_DB = (new Conexion())->getConexion();
         $query = "UPDATE `tabla-catalogo` SET `autor_ID`= :autor_ID,`genero_ID`= $genero_ID,`titulo`= :titulo,`sinopsis`= :sinopsis,`volumen`= :volumen,`precio`= :precio,`publicacion`= :publicacion WHERE `ID` = $ID";
 
-        $PDOStament = $conexion_con_DB->prepare($query);
-        $PDOStament->execute([
+        $PDOStatement = $conexion_con_DB->prepare($query);
+        $PDOStatement->execute([
             "autor_ID" => htmlspecialchars($autor_ID),
             // "genero_ID" => htmlspecialchars($genero_ID),
             "titulo" => htmlspecialchars($titulo),

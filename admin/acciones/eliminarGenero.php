@@ -9,7 +9,7 @@
             
             $genero->eliminarGenero($id);
 
-            header("Location: ../index.php?sec=home");
+            header("Location: ../index.php?sec=dashboard");
         }else{
             throw new Exception();
         }
