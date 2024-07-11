@@ -18,7 +18,7 @@
 </style>
 
 <div class="container-fluid d-flex flex-row m-4">
-        <div class="container p-4 d-flex" style="background-color: #FFBF69;">
+        <div class="container p-4 d-flex rounded" style="border: solid 3px #FFBF69;">
             <div>
                 <img src="img/portadas/<?=$mangas->getPortada()?>" alt="<?= $mangas->getTextoAlt() ?>" class="card-img">
             </div>
@@ -28,15 +28,24 @@
                 <p class="mt-2">Volumen  <?= $mangas->getVolumen() ?></p>
 
                 <div class="container mt-4" style="width:80%">
-                    <h2 class="mt-2 mb-4">Autor: <?= $mangas->getAutorID()?></h2>
-                    <h2 class="mb-4 fw-bold">$<?= $mangas->getPrecio() ?></h2>
+                    <h3 class="mt-2 mb-4">Autor: <?= $mangas->getAutorID()?></h2>
+                    <h3 class="mb-4 fw-bold">$<?= $mangas->getPrecio() ?></h2>
 
-                    <p class="fs-3 fw-semibold">Sinopsis:</p>
+                    <p class="fs-4 fw-semibold">Sinopsis:</p>
                     <p class="fs-4">"<?= $mangas->getSinopsis() ?>"</p>
 
                     <form action="admin/acciones/agregarAcarro.php" method="post">
-                        
-                        <button class="mt-4 btn btn-outline-primary btn-lg" id="boton">Comprar</button>
+                        <div class="container row">
+                            <div class="col-2 align-self-center p-0">
+                                <input class="form-control" type="number" name="cantidad" id="cantidad" min="1" value="1" style="width: 5vw">
+                            </div>
+
+                            <div class="col-3">
+                                <input type="hidden" value="<?= $mangas->getID()?>" name="id">
+                                <button type="submit" class="btn btn-lg" id="boton"> Agregar</button>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>

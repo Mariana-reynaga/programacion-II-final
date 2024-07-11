@@ -1,18 +1,15 @@
-<?php 
+<?php
     require_once "../../funcion/cargarClass.php";
-
-    $id = $_POST["id"] ?? false;
-
-    $cantidad = $_POST["cantidad"] ?? 1;
 
     echo "<pre>";
     print_r($_POST);
     echo "</pre>";
-
-    if ($id) {
-        (new Carrito())->agregarProd($id,$cantidad);
-
+    
+    if (!empty($_POST["cantidad"])) {
+        (new Carrito())->actualizar_carro( $_POST["cantidad"] );
+        
         header("Location: ../../index.php?sec=carrito");
+
     }
 
 ?>

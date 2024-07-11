@@ -64,7 +64,7 @@
                 "nombre" => htmlspecialchars($nombre),
                 "nom_usuario" => htmlspecialchars($nom_usuario),
                 "email" => htmlspecialchars($email),
-                "password" => $passHash
+                "password" => htmlspecialchars($password)
             ]);
         }
         

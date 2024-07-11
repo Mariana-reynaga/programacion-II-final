@@ -18,3 +18,10 @@
 .fondo-container{
     background-color: #FFFAF1;
 }
+
+.elim{
+    background-color: #dc3545;
+}
+.elim:hover{
+    border: solid 1px #dc3545;
+}
