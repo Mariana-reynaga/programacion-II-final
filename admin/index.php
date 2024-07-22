@@ -113,8 +113,8 @@
 
         </header>
     </div>
-
+    
     <?php file_exists("views/$vistas.php") ? require "views/$vistas.php" : require "views/dashboard.php" ?>
-
+    
 </body>
 </html>
