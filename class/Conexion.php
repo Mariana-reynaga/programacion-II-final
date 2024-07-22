@@ -9,7 +9,6 @@
         protected PDO $db;
 
         public function __construct(){
-
             try {
                 $this->db = new PDO(self::DB_DSN , self::DB_USER , self::DB_PASS);
             } catch (Exception $e) {

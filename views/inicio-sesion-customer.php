@@ -1,6 +1,6 @@
 <div class="container">
     <h1 class="text-center my-4">Iniciar Sesión</h1>
-    <form action="acciones/login-check.php" class="d-flex justify-content-center mt-5" method="POST" autocomplete="off">
+    <form action="admin/acciones/login-check-user.php" class="d-flex justify-content-center mt-5" method="POST" autocomplete="off">
         <div class="container w-50 row  p-4 border border-secondary-subtle rounded">
             <div class="col">
                 <label for="user" class="form-label">Nombre de Usuario</label>

@@ -3,5 +3,5 @@
 
     (new Autentificar())->log_out();
 
-    header("Location: ../index.php");
+    header("Location: ../../index.php");
 ?>

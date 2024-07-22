@@ -64,8 +64,6 @@
             $conexion_con_DB = (new Conexion())->getConexion();
             $query = "INSERT INTO `tabla-usuario`(`ID`, `nombre`, `nom_usuario`, `email`, `password`, `rol`) VALUES (NULL, :nombre, :nom_usuario, :email, :password, 'admin')";
 
-            $passHash = password_hash(htmlspecialchars($password), PASSWORD_DEFAULT);
-
             $PDOStatement = $conexion_con_DB->prepare($query);
             $PDOStatement->execute([
                 "nombre" => htmlspecialchars($nombre),
@@ -78,8 +76,6 @@
         public function crear_user($nombre, $nom_usuario, $email, $password){
             $conexion_con_DB = (new Conexion())->getConexion();
             $query = "INSERT INTO `tabla-usuario`(`ID`, `nombre`, `nom_usuario`, `email`, `password`, `rol`) VALUES (NULL, :nombre, :nom_usuario, :email, :password, 'usuario')";
-
-            // $passHash = password_hash(htmlspecialchars($password), PASSWORD_DEFAULT);
 
             $PDOStatement = $conexion_con_DB->prepare($query);
             $PDOStatement->execute([
