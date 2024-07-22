@@ -12,7 +12,7 @@
         if ($usCheck) {
             header("Location: ../index.php?sec=agregarUsuarioForm");
         }else{
-            (new Usuario())->crear_usuario(
+            (new Usuario())->crear_admin(
                 $nombre,
                 $usuario,
                 $mail,
