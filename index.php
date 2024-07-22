@@ -29,6 +29,9 @@
         ],
         "inicio-sesion-customer" =>[
             "title" => "Iniciar Sesión"
+        ],
+        "registro" =>[
+            "title" => "Crear Cuenta"
         ]
     ];
 

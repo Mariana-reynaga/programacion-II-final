@@ -20,7 +20,7 @@
     </form>
 
     <div class="container mt-3 d-flex flex-column align-items-center justify-content-center">
-        <a href="" class="fw-bold text-decoration-none py-2 px-3 fs-5">Registrar cuenta</a>
+        <a href="index.php?sec=registro" class="fw-bold text-decoration-none py-2 px-3 fs-5">Registrar cuenta</a>
 
         <a href="admin" class="fw-bold text-decoration-none py-2 px-3 fs-5">¿Sos administrador? Inicia sesión aca</a>
     </div>

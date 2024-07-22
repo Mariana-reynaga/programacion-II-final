@@ -42,7 +42,7 @@
         {
             return $this->rol;
         }
-        
+
         public function get_x_usuario(string $nom_usuario) :? self
         {
             $conexion_con_DB = (new Conexion())->getConexion();
@@ -65,6 +65,21 @@
             $query = "INSERT INTO `tabla-usuario`(`ID`, `nombre`, `nom_usuario`, `email`, `password`, `rol`) VALUES (NULL, :nombre, :nom_usuario, :email, :password, 'admin')";
 
             $passHash = password_hash(htmlspecialchars($password), PASSWORD_DEFAULT);
+
+            $PDOStatement = $conexion_con_DB->prepare($query);
+            $PDOStatement->execute([
+                "nombre" => htmlspecialchars($nombre),
+                "nom_usuario" => htmlspecialchars($nom_usuario),
+                "email" => htmlspecialchars($email),
+                "password" => htmlspecialchars($password)
+            ]);
+        }
+
+        public function crear_user($nombre, $nom_usuario, $email, $password){
+            $conexion_con_DB = (new Conexion())->getConexion();
+            $query = "INSERT INTO `tabla-usuario`(`ID`, `nombre`, `nom_usuario`, `email`, `password`, `rol`) VALUES (NULL, :nombre, :nom_usuario, :email, :password, 'usuario')";
+
+            // $passHash = password_hash(htmlspecialchars($password), PASSWORD_DEFAULT);
 
             $PDOStatement = $conexion_con_DB->prepare($query);
             $PDOStatement->execute([

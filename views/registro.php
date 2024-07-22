@@ -1,8 +1,7 @@
-<?php if( isset($_SESSION["login"] )) { ?>
-    <div>
-        <h1 class="text-center my-3">Registrar Usuario</h1>
+<div>
+        <h1 class="text-center my-3">Crear Cuenta</h1>
 
-        <form action="acciones/registrar-admin.php" method="POST" class="d-flex justify-content-center mt-5" autocomplete="off">
+        <form action="admin/acciones/registrar-usuario.php" method="POST" class="d-flex justify-content-center mt-5" autocomplete="off">
             <div class="container w-50 row row-cols-2 p-4 border border-secondary-subtle rounded">
                 <div class="col mb-2">
                     <label for="nomIRL" class="form-label">Nombre completo</label>
@@ -25,12 +24,8 @@
                 </div>
 
                 <div class="container-fluid d-flex justify-content-center mt-5">
-                    <button type="submit" class="btn add py-2 px-3 fs-3">Agregar Usuario</button>
+                    <button type="submit" class="btn add py-2 px-3 fs-3">Registrar</button>
                 </div>
             </div>
         </form>
-    </div>
-
-<?php }else{
-    header("Location: index.php?sec=dashboard");   
-}?>
+</div>
