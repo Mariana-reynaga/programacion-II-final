@@ -42,8 +42,8 @@
             <li class="nav-item"><a href="index.php?sec=contacto" class="nav-link">Contacto</a></li>
             <li class="nav-item"><a href="index.php?sec=datosAlum" class="nav-link">Datos</a></li>
 
-            <?php if( isset($_SESSION["login"] )) {?>
-                <li class="nav-item"><a href="admin/acciones/logout-check.php" class="nav-link">Cerrar Sesión</a></li>
+            <?php if( isset($_SESSION["loginUser"] )) {?>
+                <li class="nav-item"><a href="admin/acciones/logout-check-user.php" class="nav-link">Cerrar Sesión</a></li>
             <?php }else{ ?>
                 <li class="nav-item"><a href="index.php?sec=inicio-sesion-customer" class="nav-link">Iniciar Sesión</a></li>
             <?php }?>

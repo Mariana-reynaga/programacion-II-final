@@ -24,7 +24,7 @@
                     if($usuario->getPassword() == $password){
                         $dataLogIn["usuario"] = $usuario->getNomUsuario();
                         $dataLogIn["id"] = $usuario->getID();
-                        $_SESSION["login"] = $dataLogIn;
+                        $_SESSION["loginUser"] = $dataLogIn;
                         return true;
                     }
                 }
@@ -35,6 +35,12 @@
         public function log_out(){
             if(isset($_SESSION["login"])){
                 unset($_SESSION["login"]); 
+            }
+        }
+
+        public function log_out_user(){
+            if(isset($_SESSION["loginUser"])){
+                unset($_SESSION["loginUser"]); 
             }
         }
 
