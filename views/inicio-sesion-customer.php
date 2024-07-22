@@ -15,7 +15,13 @@
             <div class="container mt-3 d-flex justify-content-center">
                 <button type="submit" class="btn add py-2 px-3 fs-4">Ingresar</button>
             </div>
+
         </div>
-        
     </form>
+
+    <div class="container mt-3 d-flex flex-column align-items-center justify-content-center">
+        <a href="" class="fw-bold text-decoration-none py-2 px-3 fs-5">Registrar cuenta</a>
+
+        <a href="admin" class="fw-bold text-decoration-none py-2 px-3 fs-5">¿Sos administrador? Inicia sesión aca</a>
+    </div>
 </div>

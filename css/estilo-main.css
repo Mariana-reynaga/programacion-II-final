@@ -1,12 +1,10 @@
 #body{
     background-color: #EDF2F4;
 }
-
 #banner{
     height: 30vw;
     background-size: cover;
 }
-
 #footer{
     height: 10vw;
 }
@@ -17,6 +15,12 @@
 
 .fondo-container{
     background-color: #FFFAF1;
+}
+.add{
+    background-color: #FFBF69;
+}
+.add:hover{
+    border: solid 1px #FF9F1C;
 }
 
 .elim{
