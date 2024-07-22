@@ -1,21 +1,23 @@
 <?php
-    error_reporting(E_ERROR | E_PARSE);
+    error_reporting(E_ERROR | E_PARSE); //evita que se muestren errores por los campos vacios
 
     $nombre = $_POST["nombre"];
-
     $apellido = $_POST["apellido"];
-
     $email = $_POST["email"];
-
     $tipo = $_POST["opcion"];
-
     $mensaje = $_POST["textArea"];
 
-    echo "<script>";
-    echo "console.log('nombre y apellido: '+'$nombre'+' '+'$apellido');";
-    echo "console.log('email: '+'$email' );";
-    echo "console.log('opcion elegida: '+'$tipo');";
-    echo "console.log('mensaje: '+'$mensaje');";
-    echo "</script>";
+    try {
+        if (isset($_POST['nombre'])) {
+            
+            header("Location: ../index.php?sec=contacto");
 
+        }else {
+            throw new Exception();
+        }
+
+
+    } catch (Exception $error) {
+        echo $error->getMessage();
+    }
 ?>
