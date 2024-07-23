@@ -101,7 +101,7 @@
         }
 
         //reemplazar la imagen en la base de datos
-        public function reemplazarIMG($imagen_portada, $texto_alt, $ID){
+        public function reemplazarIMG($ID, $imagen_portada, $texto_alt){
             $conexion_con_DB = (new Conexion())->getConexion();
             $query = "UPDATE `tabla-portada` SET `imagen_portada`= :imagen_portada ,`texto_alt`= :texto_alt WHERE `ID` = $ID";
 

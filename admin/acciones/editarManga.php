@@ -20,9 +20,9 @@
             echo $newName;
 
             $newPortada = (new Portada())->reemplazarIMG(
+                $_POST["portada-og-id"],
                 $newName,
-                $_POST["txtAlt"],
-                $_POST["portada-og-id"]
+                $_POST["txtAlt"]
             );
 
         }else{
@@ -32,7 +32,6 @@
                 $_POST["txtAlt"]
             );
         }
-
 
         $newManga = (new Manga())->editarManga(
             $_POST["autor"],
