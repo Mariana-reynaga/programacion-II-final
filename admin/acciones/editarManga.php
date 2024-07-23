@@ -10,28 +10,29 @@
     echo "</pre>";
 
     $imgNueva = $_FILES["portada"] ?? FALSE; //Traigo la portada nueva, en caso de que este vacio me devuelve un falso
-    
+
     try {
         if (!($_FILES["portada"]["error"] == 4)) { //cambios si se subio una nueva portada
             (new Portada())->deleteFile("../../img/portadas/".$_POST["portada-og"]); //elimino el archivo de la carpeta portadas
             
             $newName = (new Portada())->subirImagen($imgNueva, "../../img/portadas"); //subo la imagen nueva a la carpeta portadas
 
+            echo $newName;
+
             $newPortada = (new Portada())->reemplazarIMG(
-                $_POST["portada-og-id"],
                 $newName,
-                $_POST["txtAlt"]
+                $_POST["txtAlt"],
+                $_POST["portada-og-id"]
             );
 
+        }else{
+            $portada = (new Portada())->reemplazarIMG(
+                $_POST["portada-og-id"],
+                $_POST["portada-og"],
+                $_POST["txtAlt"]
+            );
         }
 
-        $portada = (new Portada())->reemplazarIMG(
-            $_POST["portada-og-id"],
-            $_POST["portada-og"],
-            $_POST["txtAlt"]
-        );
-
-        // echo "UPDATE `tabla-catalogo` SET `autor_ID`= :autor_ID,`genero_ID`=".$_POST["genero"].",`titulo`= :titulo,`sinopsis`= :sinopsis,`volumen`= :volumen,`precio`= :precio,`publicacion`= :publicacion WHERE `ID` = ";
 
         $newManga = (new Manga())->editarManga(
             $_POST["autor"],

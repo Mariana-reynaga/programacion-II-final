@@ -169,7 +169,6 @@ class Manga{
         $PDOStatement = $conexion_con_DB->prepare($query);
         $PDOStatement->execute([
             "autor_ID" => htmlspecialchars($autor_ID),
-            // "genero_ID" => htmlspecialchars($genero_ID),
             "titulo" => htmlspecialchars($titulo),
             "sinopsis" => htmlspecialchars($sinopsis),
             "volumen" => htmlspecialchars($volumen),
