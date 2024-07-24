@@ -1,6 +1,10 @@
 <div>
     <h1 class="text-center my-3">Registrar Usuario</h1>
 
+    <div class="container my-2">
+        <?= (new Alerta())->get_alertas() ?>
+    </div>
+
     <form action="acciones/registrar-admin.php" method="POST" class="d-flex justify-content-center mt-5" autocomplete="off">
         <div class="container w-50 row row-cols-2 p-4 border border-secondary-subtle rounded">
             <div class="col mb-2">

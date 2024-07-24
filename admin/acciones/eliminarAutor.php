@@ -9,7 +9,9 @@
             
             $autor->eliminarAutor($id);
             
-            header("Location: ../index.php?sec=dashboard");
+            header("Location: ../index.php?sec=autor-admin");
+            
+            (new Alerta())->agregar("Se elimino el autor exitosamente", "success");
         }else{
             throw new Exception();
         }

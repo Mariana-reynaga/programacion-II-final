@@ -27,6 +27,8 @@
 
         header("Location: ../index.php?sec=todosManga");
 
+        (new Alerta())->agregar("Manga agregado", "success");
+        
     } catch (Throwable $th) {
         die( $th->getMessage() );
     }

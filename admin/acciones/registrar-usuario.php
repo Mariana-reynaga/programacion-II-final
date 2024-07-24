@@ -11,6 +11,8 @@
 
         if ($usCheck) {
             header("Location: ../../index.php?sec=registro");
+            
+            (new Alerta())->agregar("Ya existe un usuario con ese nombre de usuario", "danger");
         }else{
             (new Usuario())->crear_user(
                 $nombre,

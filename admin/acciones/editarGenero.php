@@ -11,10 +11,10 @@
             $_POST["id"]
         );
 
-        header("Location: ../index.php?sec=admin-genero");
+        header("Location: ../index.php?sec=genero-admin");
+        (new Alerta())->agregar("Se edito el genero exitosamente", "success");
 
     }catch(Throwable $th){
-
         die( $th->getMessage() );
     }
 ?>

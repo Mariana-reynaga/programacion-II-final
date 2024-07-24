@@ -13,6 +13,8 @@
         
         header("Location: ../index.php?sec=autor-admin");
 
+        (new Alerta())->agregar("Autor agregado", "success");
+
     }catch (\Throwable $th) {
         die( $th->getMessage() );  
     }

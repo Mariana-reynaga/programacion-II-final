@@ -16,6 +16,10 @@
 
 <h1 class="text-center my-4">Manga</h1>
 
+<div class="container my-2">
+    <?= (new Alerta())->get_alertas() ?>
+</div>
+
 <div class="container">  
     <div class="row row-cols-3">
         

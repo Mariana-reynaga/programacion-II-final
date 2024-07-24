@@ -45,6 +45,8 @@
         );
 
         header("Location: ../index.php?sec=todosManga");
+
+        (new Alerta())->agregar("Se edito el manga exitosamente", "success");
     } catch (Exception $e) {
         echo $e->getMessage();
     }

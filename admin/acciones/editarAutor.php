@@ -11,7 +11,8 @@
             $_POST["id"]
         );
 
-        header("Location: ../index.php?sec=admin-autor");
+        header("Location: ../index.php?sec=autor-admin");
+        (new Alerta())->agregar("Se edito el autor exitosamente", "success");
 
     }catch(Throwable $th){
 

@@ -2,6 +2,7 @@
     <h1 class="text-center my-4">Dashboard</h1>
     <div class="container">
         <?php if( isset($_SESSION["login"] )) {?>
+            <?= (new Alerta())->get_alertas() ?>
             <p class="text-center">Bienvenido al Panel de control de M-point</p>
         <?php }else{ ?>
             <div class="container d-flex flex-column align-items-center justify-content-center">

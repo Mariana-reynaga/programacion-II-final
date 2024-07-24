@@ -16,6 +16,8 @@
             (new Portada())->deleteFile("../../img/portadas/".$portada->getImagenPortada()); 
             
             header("Location: ../index.php?sec=todosManga");
+
+            (new Alerta())->agregar("Se elimino el manga exitosamente", "success");
         }else{
             throw new Exception();
         }

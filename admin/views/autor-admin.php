@@ -5,6 +5,10 @@
 
 <h1 class="text-center my-4">Autores</h1>
 
+<div class="container my-2">
+    <?= (new Alerta())->get_alertas() ?>
+</div>
+
 <div class="container">  
     <div class="row row-cols-2 g-3">
         <?php foreach ($autores as $autor){ ?>

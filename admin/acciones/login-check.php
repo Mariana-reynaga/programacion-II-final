@@ -8,7 +8,9 @@
 
     if ($login) {
         header("Location: ../index.php?sec=dashboard");
+        (new Alerta())->agregar("Bienvenido a administración", "success");
     }else{
         header("Location: ../index.php?sec=logIn");
+        (new Alerta())->agregar("Usuario y/o contraseña incorrectos, porfavor intente devuelta.", "danger");
     }
 ?>

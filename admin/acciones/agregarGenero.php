@@ -13,6 +13,8 @@
         
         header("Location: ../index.php?sec=genero-admin");
 
+        (new Alerta())->agregar("Genero agregado", "success");
+
     }catch (\Throwable $th) {
         die( $th->getMessage());  
     }

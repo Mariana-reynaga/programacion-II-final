@@ -11,6 +11,8 @@
 
         if ($usCheck) {
             header("Location: ../index.php?sec=agregarUsuarioForm");
+            (new Alerta())->agregar("Ya existe un usuario con ese nombre de usuario", "danger");
+
         }else{
             (new Usuario())->crear_admin(
                 $nombre,
@@ -20,6 +22,7 @@
             );
 
             header("Location: ../index.php?sec=dashboard");
+            (new Alerta())->agregar("Usuario agregado", "success");
         }
     }catch(Exception $e){
 

@@ -9,7 +9,8 @@
             
             $genero->eliminarGenero($id);
 
-            header("Location: ../index.php?sec=dashboard");
+            header("Location: ../index.php?sec=genero-admin");
+            (new Alerta())->agregar("Se elimino el genero exitosamente", "success");
         }else{
             throw new Exception();
         }

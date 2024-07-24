@@ -1,5 +1,10 @@
 <div class="container">
     <h1 class="text-center my-4">Iniciar Sesión</h1>
+
+    <div class="container my-2">
+        <?= (new Alerta())->get_alertas() ?>
+    </div>
+    
     <form action="acciones/login-check.php" class="d-flex justify-content-center mt-5" method="POST" autocomplete="off">
         <div class="container w-50 row  p-4 border border-secondary-subtle rounded">
             <div class="col">
