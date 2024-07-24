@@ -44,5 +44,13 @@
             }
         }
 
+        public function verificar(){
+            if(isset($_SESSION["login"])){
+                return true;
+
+            }else{
+                header("Location: index.php?sec=dashboard");
+            }
+        }
     }
 ?>

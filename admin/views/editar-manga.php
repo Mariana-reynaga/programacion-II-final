@@ -8,8 +8,6 @@
     $genero= (new Genero())->genero_completo();
 ?>
 
-<?php if( isset($_SESSION["login"] )) { ?>
-    
 <div class="container mt-3">
     <h1 class="text-center mb-5">Editar <?= $manga->getTitulo() ?></h1>
 
@@ -96,7 +94,3 @@
         </div>
     </form>
 </div>
-
-<?php }else{
-    header("Location: index.php?sec=dashboard");   
-}?>

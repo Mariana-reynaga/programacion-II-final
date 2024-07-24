@@ -1,4 +1,6 @@
 <?php
+    error_reporting(E_ERROR | E_PARSE);
+    
     require_once "../funcion/cargarClass.php";
 
     $categoria = isset( $_GET["sec"] ) ? $_GET["sec"] : "dashboard";
@@ -10,55 +12,74 @@
             "title" => "Administración"
         ],
         "agregarMangaForm" =>[
-            "title" => "Agregar Manga"
+            "title" => "Agregar Manga",
+            "restringido" => true
         ],
         "todosManga" => [
-            "title" => "Manga"
+            "title" => "Manga",
+            "restringido" => true
         ],
         "agregarAutorForm" => [
-            "title" => "Agregar Autor"
+            "title" => "Agregar Autor",
+            "restringido" => true
         ],
         "agregarGeneroForm" => [
-            "title" => "Agregar Genero"
+            "title" => "Agregar Genero",
+            "restringido" => true
         ],
         "autor-admin" => [
-            "title" => "Autores"
+            "title" => "Autores",
+            "restringido" => true
         ],
         "genero-admin" => [
-            "title" => "Generos"
+            "title" => "Generos",
+            "restringido" => true
         ],
         "eliminar-Comic" => [
-            "title" => "¿Esta seguro?"
+            "title" => "¿Esta seguro?",
+            "restringido" => true
         ],
         "eliminar-autor" => [
-            "title" => "¿Esta seguro?"
+            "title" => "¿Esta seguro?",
+            "restringido" => true
         ],
         "eliminar-genero" => [
-            "title" => "¿Esta seguro?"
+            "title" => "¿Esta seguro?",
+            "restringido" => true
         ],
         "editar-autor" =>[
-            "title" => "Editar autor"
+            "title" => "Editar autor",
+            "restringido" => true
         ],
         "editar-genero" =>[
-            "title" => "Editar genero"
+            "title" => "Editar genero",
+            "restringido" => true
         ],
         "editar-manga" =>[
-            "title" => "Editar manga"
+            "title" => "Editar manga",
+            "restringido" => true
         ],
         "logIn" =>[
-            "title" => "Iniciar Sesión"
+            "title" => "Iniciar Sesión",
+            "restringido" => false
         ],
         "agregarUsuarioForm" =>[
-            "title" => "Agregar Usuario"
+            "title" => "Agregar Usuario",
+            "restringido" => true
         ]
     ];
 
     if( array_key_exists($categoria, $viewsValidas) ){
         $vistas = $categoria;
         $titulo = $viewsValidas[$categoria]["title"];
+
+        if ( $viewsValidas[$categoria]['restringido']) {
+            (new Autentificar())->verificar();
+        }
     }else{
         $titulo = "Pagina no encontrada";
     };
+
 
 ?>
 
