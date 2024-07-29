@@ -27,7 +27,8 @@
                         <td > <p><?= $manga["titulo"]?></p> </td>
         
                         <td>
-                            <input class="form-control w-25" type="number" min="1" value="<?= $manga["cantidad"]?>" name="cantidad[<?= $id ?>]">
+                            <input class="form-control w-25" type="number" min="1" value="<?= $manga["cantidad"]?>" name="cantidad[<?= $id ?>]" >
+                            <!-- name es el id, value es la cantidad de ese prod en el carro -->
                         </td>
         
                         <td> <p>$<?= $manga["precio"]?></p> </td>
@@ -48,7 +49,27 @@
                 <button type="submit" class="btn bg-primary">actualizar</button>
                 <a href="admin/acciones/eliminarCarro.php" class="btn bg-danger">vaciar</a>
             </div>
-    
         </div>
     </form>
+
+    <?php if( isset($_SESSION["loginUser"] )) {?>
+        <form action="admin/acciones/guardarCarro.php" method="POST">
+            <input type="hidden" name="userID" value="<?= $_SESSION["loginUser"]["id"]?>">
+            <?php foreach ($miCarro as $id => $manga) {?>
+                <input type="hidden" name="mangas_en_carro[<?= $id ?>]" value="<?=$manga["cantidad"]?>">
+
+            <?php }?>
+
+            <div class="container mt-5">
+                <button type="submit" class="btn add">finalizar compra</button>
+            </div>
+
+        </form>
+
+    <?php }else{ ?>
+        <div class="container mt-5">
+            <a href="index.php?sec=inicio-sesion-customer" class="btn add">Iniciar Sesión para finalizar compra</a>
+
+        </div>
+    <?php }?>
 </div>

@@ -1,8 +1,12 @@
 <?php 
     class Carrito{
+        protected $ID;
+        protected $user_ID;
+        protected $catalogo_ID;
+        protected $cantidad;
+
         //metodos:
         //agregar un item
-        //por ahora esto se tiene que guardar en session, el carro con relacion de muchos a muchos es para el final
         public function agregarProd(int $productoID, int $cantidad){
 
             $producto = (new Manga())->catalogo_x_id($productoID);
@@ -57,6 +61,19 @@
             $_SESSION["carrito"] = [];
         }
 
+        //guardar en la base de datos
+        public function guardar($user_ID, $catalogo_ID, $cantidad){
+            $conexion_con_DB = (new Conexion())->getConexion();
+            $query = "INSERT INTO `carro`(`ID`, `user_ID`, `catalogo_ID`, `cantidad`) VALUES (NULL, :user_ID, :catalogo_ID, :cantidad)";
+            $PDOStatement = $conexion_con_DB->prepare($query);
+
+            $PDOStatement->execute([
+                    "user_ID" => htmlspecialchars($user_ID),
+                    "catalogo_ID" => htmlspecialchars($catalogo_ID),
+                    "cantidad" => htmlspecialchars($cantidad)
+            ]);
+
+        }
     }
 
 ?>

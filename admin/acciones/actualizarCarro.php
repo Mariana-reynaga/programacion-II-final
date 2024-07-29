@@ -8,8 +8,9 @@
     if (!empty($_POST["cantidad"])) {
         (new Carrito())->actualizar_carro( $_POST["cantidad"] );
         
+        echo "entre al coso";
+        
         header("Location: ../../index.php?sec=carrito");
-
     }
-
+    
 ?>
