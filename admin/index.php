@@ -66,6 +66,14 @@
         "agregarUsuarioForm" =>[
             "title" => "Agregar Usuario",
             "restringido" => true
+        ],
+        "pedidos-admin" =>[
+            "title" => "Pedidos",
+            "restringido" => true
+        ],
+        "ver-pedido" =>[
+            "title" => "Pedido",
+            "restringido" => true
         ]
     ];
 
@@ -111,6 +119,7 @@
                     <li class="nav-item"><a href="index.php?sec=todosManga" class="nav-link">Manga</a></li>
                     <li class="nav-item"><a href="index.php?sec=autor-admin" class="nav-link">Autores</a></li>
                     <li class="nav-item"><a href="index.php?sec=genero-admin" class="nav-link">Generos</a></li>
+                    <li class="nav-item"><a href="index.php?sec=pedidos-admin" class="nav-link">Pedidos</a></li>
 
                     <!-- menú drop down -->
                     <li class="nav-item dropdown">

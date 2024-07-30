@@ -32,6 +32,9 @@
         ],
         "registro" =>[
             "title" => "Crear Cuenta"
+        ],
+        "perfil" =>[
+            "title" => "Perfil"
         ]
     ];
 

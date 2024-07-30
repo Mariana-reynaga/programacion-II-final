@@ -43,6 +43,30 @@
             return $this->rol;
         }
 
+        public function user_x_id(int $ID):? self
+        {
+            $conexion_con_DB = (new Conexion())->getConexion();
+            $query = "SELECT * FROM `tabla-usuario` WHERE `ID` = '$ID'";
+            $PDOStatement = $conexion_con_DB->prepare($query);
+            $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+            $PDOStatement->execute();
+            $resultado = $PDOStatement->fetch();
+    
+            return isset($resultado) ? $resultado : null;
+        }
+
+        public function todos_usuarios(){
+            $conexion_con_DB = (new Conexion())->getConexion();
+                $query = "SELECT * FROM `tabla-usuario` WHERE `rol` = 'usuario'";
+                $PDOStatement = $conexion_con_DB->prepare($query);
+                $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+                $PDOStatement->execute();
+        
+                $listaUsuarios = $PDOStatement->fetchAll();
+        
+                return $listaUsuarios ? $listaUsuarios : [];      
+        }
+
         public function get_x_usuario(string $nom_usuario) :? self
         {
             $conexion_con_DB = (new Conexion())->getConexion();

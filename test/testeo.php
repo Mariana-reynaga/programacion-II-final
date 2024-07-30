@@ -1,9 +1,11 @@
 <?php
-    require_once "funcion/cargarClass.php";
+    require_once "../funcion/cargarClass.php";
 
     $conexion = new Conexion();
     
-    $manga = (new Manga())->catalogo();
+    // $manga = (new Manga())->catalogo();
+
+    $carroF = (new Carrito())->pedidos_x_fecha();
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +41,7 @@
         </form>
     </div> -->
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row row-cols-2">
             <div class="col">
                 <?php foreach ($manga as $producto){ ?>
@@ -53,6 +55,39 @@
                 <?php }?>
             </div>
         </div>
-    </div>
+    </div> -->
+
+    <?php
+        // echo "<pre>";
+        // print_r($carroF);
+        // echo "</pre>";
+        
+        $pedido_x_fecha = array();
+
+        foreach($carroF as $key => $valuesAry){
+            $date = date('d', strtotime($valuesAry->fecha));
+            $pedido_x_fecha[$date][] = $valuesAry;
+        }
+
+        foreach ($pedido_x_fecha as $dias) {
+            echo "<br>";
+            echo "aca comienza";
+            $total = 0;
+            foreach ($dias as $key) {
+                $p = intval($key->getPrecio());
+                $total .= $p;?>
+                <p><?= $key->getCatalogoID()?></p>
+                <p><?= $key->getPrecio()?></p>
+
+            <?php }
+            echo "<br>";
+            echo "el total es:".$total;
+            echo "<br>";
+            echo "aca termina";
+            echo "<br>";
+        }
+    ?>
+    
+
 </body>
 </html>
