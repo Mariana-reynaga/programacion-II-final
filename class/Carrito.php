@@ -6,6 +6,7 @@
         protected $cantidad;
         protected $precio_indv;
         public $fecha;
+        protected $estado;
 
         //metodos:
         //agregar un item
@@ -63,9 +64,10 @@
         }
 
         //guardar en la base de datos
-        public function guardar($user_ID, $catalogo_ID, $cantidad, $precio_indv ,$fecha){
+        public function guardar($user_ID, $catalogo_ID, $cantidad, $precio_indv ,$fecha, $estado){
             $conexion_con_DB = (new Conexion())->getConexion();
-            $query = "INSERT INTO `carro`(`ID`, `user_ID`, `catalogo_ID`, `cantidad`, `precio_indv`, `fecha`) VALUES (NULL,:user_ID , :catalogo_ID , :cantidad , :precio_indv , :fecha)";
+            $query = "INSERT INTO `carro`(`ID`, `user_ID`, `catalogo_ID`, `cantidad`, `precio_indv`, `fecha`, `estado`) VALUES (NULL, :user_ID , :catalogo_ID , :cantidad , :precio_indv , :fecha, :estado)";
+
             $PDOStatement = $conexion_con_DB->prepare($query);
 
             $PDOStatement->execute([
@@ -73,7 +75,8 @@
                     "catalogo_ID" => htmlspecialchars($catalogo_ID),
                     "cantidad" => htmlspecialchars($cantidad),
                     "precio_indv" => htmlspecialchars($precio_indv),
-                    "fecha" => htmlspecialchars($fecha)
+                    "fecha" => htmlspecialchars($fecha),
+                    "estado" => htmlspecialchars($estado)
             ]);
 
         }
@@ -102,6 +105,19 @@
             $listaCarros = $PDOStatement->fetchAll();
     
             return $listaCarros ? $listaCarros : []; 
+        }
+
+        //Marcar los pedidos como completados
+        public function marcar_completado($ID, $estado){
+            $conexion_con_DB = (new Conexion())->getConexion();
+            $query = "UPDATE `carro` SET `estado`= :estado WHERE `ID` = $ID";
+
+            $PDOStatement = $conexion_con_DB->prepare($query);
+
+            $PDOStatement->execute([
+                    "estado" => htmlspecialchars($estado)
+            ]);
+
         }
 
         /*Traer el nombre del usuario*/
@@ -138,6 +154,12 @@
         public function getFecha()
         {
                 return $this->fecha;
+        }
+
+        /*Get the value of estado*/
+        public function getEstado()
+        {
+                return $this->estado;
         }
     }
 ?>

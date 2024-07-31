@@ -9,13 +9,11 @@
 
     $fecha = $_POST["fecha"];
 
-
     try {
         if (!empty($mangas_ids)) {
             foreach ($mangas_ids as $id => $cantidad) {
                 //guardo en la base de datos el usuario, productos y cantidades
-
-               (new Carrito())->guardar($user_id, $id, $cantidad, $precios[$id] ,$fecha);
+               (new Carrito())->guardar($user_id, $id, $cantidad, $precios[$id] ,$fecha, 'pendiente');
             }
             
             (new Carrito())->eliminar_Carro();

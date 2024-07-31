@@ -53,7 +53,7 @@
 
     <?php if( isset($_SESSION["loginUser"] )) {?>
         <form action="admin/acciones/guardarCarro.php" method="POST">
-            <input type="hidden" name="fecha" value="<?= date("Y-m-d",$fecha)?>">
+            <input type="hidden" name="fecha" value="<?= date("Y-m-d H:i:s",$fecha)?>">
             <input type="hidden" name="userID" value="<?= $_SESSION["loginUser"]["id"]?>">
             <?php foreach ($miCarro as $id => $manga) {?>
                 <input type="hidden" name="precios_manga[<?= $id ?>]" value="<?=$manga["precio"]?>">
